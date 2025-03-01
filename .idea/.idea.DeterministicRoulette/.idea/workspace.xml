@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eb58e2c-0452-4a73-beb5-3c7ded76f205" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DeterministicRoulette/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DeterministicRoulette/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/RouletteWheelAmerican.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/RouletteWheelAmerican.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/bowl.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/bowl.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/bowlDiamond.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/bowlDiamond.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/AmericanRoulette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/AmericanRoulette.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/AmericanRoulette.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AmericanRoulette.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://Ball.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://BallMovementController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ChipWidget.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -125,7 +102,7 @@
       <workItem from="1740780318705" duration="1599000" />
       <workItem from="1740788266830" duration="649000" />
       <workItem from="1740824489588" duration="5516000" />
-      <workItem from="1740834168172" duration="2588000" />
+      <workItem from="1740834168172" duration="3423000" />
     </task>
     <servers />
   </component>
