@@ -893,7 +893,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -913,10 +919,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: cc481c79-1f66-4798-baad-b347d1dc4b76
+  cloudProjectId: 6087aaa0-2fb0-452c-accd-a42acf4347c4
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DeterministicRoulette 2025-03-01_00-10-24
+  projectName: DeterministicRoulette
   organizationId: balkac
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
