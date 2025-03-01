@@ -211,6 +211,117 @@ MonoBehaviour:
   - Number: 0
     NumberType: 2
     NumberTransform: {fileID: 5471364246203110043}
+  - Number: 32
+    NumberType: 0
+    NumberTransform: {fileID: 5471364245843715459}
+  - Number: 15
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247725537927}
+  - Number: 19
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247425091853}
+  - Number: 4
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246659225769}
+  - Number: 21
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246624139795}
+  - Number: 2
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246941318340}
+  - Number: 25
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247713845679}
+  - Number: 17
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247874007613}
+  - Number: 34
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247628262100}
+  - Number: 6
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246896210033}
+  - Number: 27
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246341584194}
+  - Number: 13
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246891059900}
+  - Number: 36
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247376158829}
+  - Number: 11
+    NumberType: 1
+    NumberTransform: {fileID: 5471364245814334768}
+  - Number: 30
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246680988686}
+  - Number: 8
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246126810730}
+  - Number: 23
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246725783534}
+  - Number: 10
+    NumberType: 1
+    NumberTransform: {fileID: 5471364245779076435}
+  - Number: 5
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246172211361}
+  - Number: 24
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247266508700}
+  - Number: 16
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247215119049}
+  - Number: 33
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247604526385}
+  - Number: 1
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247254969167}
+  - Number: 20
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247684434039}
+  - Number: 14
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247398708427}
+  - Number: 31
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247582113285}
+  - Number: 9
+    NumberType: 0
+    NumberTransform: {fileID: 5471364245988926494}
+  - Number: 22
+    NumberType: 1
+    NumberTransform: {fileID: 5471364245998594659}
+  - Number: 18
+    NumberType: 0
+    NumberTransform: {fileID: 5471364246970307846}
+  - Number: 29
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246188640405}
+  - Number: 7
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247806892280}
+  - Number: 28
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246283809742}
+  - Number: 12
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247321341849}
+  - Number: 35
+    NumberType: 1
+    NumberTransform: {fileID: 5471364246263385430}
+  - Number: 3
+    NumberType: 0
+    NumberTransform: {fileID: 5471364247657428218}
+  - Number: 26
+    NumberType: 1
+    NumberTransform: {fileID: 5471364247742801563}
+  - Number: -1
+    NumberType: 2
+    NumberTransform: {fileID: 7460381974092515544}
 --- !u!1 &1948206172031795258
 GameObject:
   m_ObjectHideFlags: 0
@@ -9020,5 +9131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotatePoint: {fileID: 8640850899913581080}
   Axis: {x: 0, y: -1, z: 0}
-  AngularSpeed: 180
-  SpinDuration: 5
+  MinAngularSpeed: 60
+  MaxAngularSpeed: 240
+  MinSpinDuration: 3
+  MaxSpinDuration: 5
+  DistanceThreshold: 0.15

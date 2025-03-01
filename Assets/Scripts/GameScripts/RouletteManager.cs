@@ -4,7 +4,7 @@ public class RouletteManager : MonoBehaviour
 {
     public WheelController WheelController;
     public BallController BallController;
-    public int _predeterminedNumber = -1;
+    public int _predeterminedNumber = -2;
 
     private System.Random random = new System.Random();
 
@@ -18,9 +18,10 @@ public class RouletteManager : MonoBehaviour
 
     public void SpinRoulette()
     {
-        int winningNumber = (_predeterminedNumber >= 0 && _predeterminedNumber <= 36)
+        // -1 for 00
+        int winningNumber = (_predeterminedNumber >= -1 && _predeterminedNumber <= 36)
             ? _predeterminedNumber
-            : random.Next(0, 37);
+            : random.Next(-1, 37);
 
         WheelNumberData resultData = WheelController.GetNumberData(winningNumber);
 
