@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
-    public float SpinSpeed = 100f;
+    [SerializeField] private float _spinSpeed = 100f;
     public List<WheelNumberData> WheelNumberDataList;
 
     private void Update()
     {
-        transform.Rotate(Vector3.forward, SpinSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.forward, _spinSpeed * Time.deltaTime);
     }
 
     public WheelNumberData GetNumberData(int number)

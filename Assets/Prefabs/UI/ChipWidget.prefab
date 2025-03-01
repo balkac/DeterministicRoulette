@@ -225,4 +225,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chipValue: 1
-  ChipText: {fileID: 819227481085485753}
+  _chipText: {fileID: 819227481085485753}

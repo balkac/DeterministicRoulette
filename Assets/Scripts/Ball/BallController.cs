@@ -1,33 +1,36 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
 public class BallController : MonoBehaviour
 {
-    public Transform RotatePoint;
-    public Vector3 Axis = Vector3.up;
-    public float MinAngularSpeed = 60f;
-    public float MaxAngularSpeed = 240f;
-    public float MinSpinDuration = 3f;
-    public float MaxSpinDuration = 5f;
-    public float DistanceThreshold = 0.15f;
-    
+    [SerializeField] private Transform _rotatePoint;
+    [SerializeField] private Vector3 _axis = Vector3.up;
+    [SerializeField] private float _minAngularSpeed = 60f;
+    [SerializeField] private float _maxAngularSpeed = 240f;
+    [SerializeField] private float _minSpinDuration = 3f;
+    [SerializeField] private float _maxSpinDuration = 5f;
+    [SerializeField] private float _distanceThreshold = 0.15f;
+
     private bool _spinning = false;
     private Coroutine _spinCoroutine;
     private Transform _initialParent;
     private Vector3 _initialLocalPosition;
     private float _angularSpeed;
+
+    public Action OnBallSpinCompleted;
     private void Awake()
     {
         _initialParent = transform.parent;
         _initialLocalPosition = transform.localPosition;
-        _angularSpeed = MaxAngularSpeed;
+        _angularSpeed = _maxAngularSpeed;
     }
 
     private void Update()
     {
         if (_spinning)
         {
-            transform.RotateAround(RotatePoint.position, Axis, _angularSpeed * Time.deltaTime);
+            transform.RotateAround(_rotatePoint.position, _axis, _angularSpeed * Time.deltaTime);
         }
     }
 
@@ -40,7 +43,7 @@ public class BallController : MonoBehaviour
             StopCoroutine(_spinCoroutine);
         }
 
-        _angularSpeed = MaxAngularSpeed;
+        _angularSpeed = _maxAngularSpeed;
         _spinning = true;
         _spinCoroutine = StartCoroutine(SpinAndStop(resultData));
     }
@@ -49,17 +52,18 @@ public class BallController : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < MaxSpinDuration)
+        while (elapsedTime < _maxSpinDuration)
         {
             elapsedTime += Time.deltaTime;
-            _angularSpeed = Mathf.Max(Mathf.Lerp(MaxAngularSpeed, 0, elapsedTime / MaxSpinDuration), MinAngularSpeed);
+            _angularSpeed = Mathf.Max(Mathf.Lerp(_maxAngularSpeed, 0, elapsedTime / _maxSpinDuration),
+                _minAngularSpeed);
             // Debug.Log($"Angular speed: {_angularSpeed}");
             yield return null;
-            
+
             // Check distance condition
             float distance = Vector3.Distance(transform.position, resultData.NumberTransform.position);
             // Debug.Log($"Distance to target: {distance}");
-            if (distance < DistanceThreshold && elapsedTime >= MinSpinDuration)
+            if (distance < _distanceThreshold && elapsedTime >= _minSpinDuration)
             {
                 Debug.Log("Distance condition met");
                 break;
@@ -113,5 +117,6 @@ public class BallController : MonoBehaviour
         }
 
         transform.localPosition = finalPosition;
+        OnBallSpinCompleted?.Invoke();
     }
 }

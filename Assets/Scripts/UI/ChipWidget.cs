@@ -5,7 +5,7 @@ public class ChipWidget : MonoBehaviour
 {
     [SerializeField] private int _chipValue;
 
-    public TextMeshProUGUI ChipText;
+    [SerializeField] private TextMeshProUGUI _chipText;
 
     private void OnValidate()
     {
@@ -14,9 +14,9 @@ public class ChipWidget : MonoBehaviour
 
     private void UpdateChipText()
     {
-        if (ChipText != null)
+        if (_chipText != null)
         {
-            ChipText.text = _chipValue.ToString();
+            _chipText.text = _chipValue.ToString();
         }
     }
 }

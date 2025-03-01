@@ -224,13 +224,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcd47976fbd04c32922ed99bda2a6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberType: 0
-  Number: 1
-  ContainerImage: {fileID: 594408053191812988}
-  NumberText: {fileID: 7156465162588713001}
   _redContainerColor: {r: 1, g: 0, b: 0, a: 1}
   _blackContainerColor: {r: 0, g: 0, b: 0, a: 1}
   _greenContainerColor: {r: 0.38124967, g: 1, b: 0, a: 1}
   _redTextMaterial: {fileID: 2100000, guid: 3a7ccb205f0bf42f8a2df5e5a204eb7e, type: 2}
   _blackTextMaterial: {fileID: 2100000, guid: 8fad38d2cbbe94c25a23aeffd0aac05f, type: 2}
   _greenTextMaterial: {fileID: 2100000, guid: ef0fc5164f2280042a24fe77fce73170, type: 2}
+  NumberType: 0
+  Number: 1
+  ContainerImage: {fileID: 594408053191812988}
+  NumberText: {fileID: 7156465162588713001}

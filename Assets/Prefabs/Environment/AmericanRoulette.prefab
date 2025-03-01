@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505116dffb9164d13bfcf31ce48af03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpinSpeed: 100
+  _spinSpeed: 100
   WheelNumberDataList:
   - Number: 0
     NumberType: 2
@@ -9129,10 +9129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c0bc5b24c1d4e568ada9f2db6b2f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePoint: {fileID: 8640850899913581080}
-  Axis: {x: 0, y: -1, z: 0}
-  MinAngularSpeed: 60
-  MaxAngularSpeed: 240
-  MinSpinDuration: 3
-  MaxSpinDuration: 5
-  DistanceThreshold: 0.15
+  _rotatePoint: {fileID: 8640850899913581080}
+  _axis: {x: 0, y: -1, z: 0}
+  _minAngularSpeed: 60
+  _maxAngularSpeed: 240
+  _minSpinDuration: 3
+  _maxSpinDuration: 5
+  _distanceThreshold: 0.15

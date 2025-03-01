@@ -4,11 +4,6 @@ using TMPro;
 
 public class NumberBetWidget : MonoBehaviour
 {
-    public ENumberType NumberType;
-    public string Number; // Changed to string
-    public Image ContainerImage;
-    public TextMeshProUGUI NumberText;
-
     [SerializeField] private Color _redContainerColor;
     [SerializeField] private Color _blackContainerColor;
     [SerializeField] private Color _greenContainerColor;
@@ -16,6 +11,11 @@ public class NumberBetWidget : MonoBehaviour
     [SerializeField] private Material _redTextMaterial;
     [SerializeField] private Material _blackTextMaterial;
     [SerializeField] private Material _greenTextMaterial;
+
+    public ENumberType NumberType;
+    public string Number; // Changed to string
+    public Image ContainerImage;
+    public TextMeshProUGUI NumberText;
 
     private void OnValidate()
     {

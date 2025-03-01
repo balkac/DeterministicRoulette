@@ -12,6 +12,7 @@ public class WheelControllerEditor : Editor
         if (GUILayout.Button("Set Wheel Number Data"))
         {
             wheelController.SetWheelNumberData();
+            EditorUtility.SetDirty(wheelController);
         }
     }
 }
