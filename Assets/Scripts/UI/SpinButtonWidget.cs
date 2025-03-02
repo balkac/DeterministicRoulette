@@ -3,22 +3,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SpinButtonWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class SpinButtonWidget : ButtonWidgetBase
 {
     [SerializeField] private RouletteManager _rouletteManager;
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button _spinButton;
-    [SerializeField] private float _animationDuration = 0.125f;
-    [SerializeField] private Vector3 _targetScale = new Vector3(0.95f, 0.95f, 0.95f);
-
-    private Vector3 _initialScale;
-    private bool _isPointerDown = false;
 
     public Action OnSpinButtonPressed;
 
-    private void Awake()
+    protected override void AwakeCustomActions()
     {
-        _initialScale = transform.localScale;
+        base.AwakeCustomActions();
         _rouletteManager.OnSpinCompleted += OnSpinCompleted;
         _spinButton.onClick.AddListener(OnSpinButtonClicked);
     }
@@ -27,20 +22,6 @@ public class SpinButtonWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         _rouletteManager.OnSpinCompleted -= OnSpinCompleted;
         _spinButton.onClick.RemoveListener(OnSpinButtonClicked);
-    }
-
-    private void Update()
-    {
-        if (_isPointerDown)
-        {
-            transform.localScale =
-                Vector3.Lerp(transform.localScale, _targetScale, Time.deltaTime / _animationDuration);
-        }
-        else
-        {
-            transform.localScale =
-                Vector3.Lerp(transform.localScale, _initialScale, Time.deltaTime / _animationDuration);
-        }
     }
 
     private void OnSpinCompleted()
@@ -66,12 +47,12 @@ public class SpinButtonWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         Deactivate();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public override void OnPointerDown(PointerEventData eventData)
     {
         _isPointerDown = true;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public override void OnPointerUp(PointerEventData eventData)
     {
         _isPointerDown = false;
     }

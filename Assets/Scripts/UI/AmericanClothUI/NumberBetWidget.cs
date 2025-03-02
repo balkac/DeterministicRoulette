@@ -5,11 +5,8 @@ using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class NumberBetWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class NumberBetWidget : ButtonWidgetBase
 {
-    [SerializeField] private float _animationDuration = 0.125f;
-    [SerializeField] private Vector3 _targetScale = new Vector3(0.95f, 0.95f, 0.95f);
-
     [SerializeField] private Color _redContainerColor;
     [SerializeField] private Color _blackContainerColor;
     [SerializeField] private Color _greenContainerColor;
@@ -25,20 +22,19 @@ public class NumberBetWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public Image ContainerImage;
     public TextMeshProUGUI NumberText;
 
-    private Vector3 _initialScale;
-    private bool _isPointerDown = false;
     private Coroutine _pressCoroutine;
     private bool _isSelectedAsPredetermined = false;
 
     public Action<NumberBetWidget> OnNumberBetWidgetSelected;
     public Action<NumberBetWidget> OnNumberBetWidgetDeselected;
 
-    private void Awake()
+    protected override void AwakeCustomActions()
     {
-        _initialScale = transform.localScale;
+        base.AwakeCustomActions();
         _highlightedImage.enabled = false;
     }
-    
+
+
     private void OnValidate()
     {
         UpdateImageColor();
@@ -55,20 +51,6 @@ public class NumberBetWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
 
         return int.Parse(Number);
-    }
-
-    private void Update()
-    {
-        if (_isPointerDown)
-        {
-            transform.localScale =
-                Vector3.Lerp(transform.localScale, _targetScale, Time.deltaTime / _animationDuration);
-        }
-        else
-        {
-            transform.localScale =
-                Vector3.Lerp(transform.localScale, _initialScale, Time.deltaTime / _animationDuration);
-        }
     }
 
     private void UpdateImageColor()
@@ -116,13 +98,13 @@ public class NumberBetWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         gameObject.name = "NumberBetWidget_" + Number;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public override void OnPointerDown(PointerEventData eventData)
     {
         _isPointerDown = true;
         _pressCoroutine = StartCoroutine(PressDurationCoroutine());
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public override void OnPointerUp(PointerEventData eventData)
     {
         _isPointerDown = false;
         if (_pressCoroutine != null)
