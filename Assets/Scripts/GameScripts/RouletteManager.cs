@@ -14,6 +14,9 @@ public class RouletteManager : MonoBehaviour
 
     public Action OnSpinStarted;
     public Action OnSpinCompleted;
+    public Action<WheelNumberData> OnSpinDataReceived;
+
+    private WheelNumberData _resultData;
 
     private void Awake()
     {
@@ -60,21 +63,22 @@ public class RouletteManager : MonoBehaviour
             ? _predeterminedNumber
             : Random.Range(-1, 37);
 
-        WheelNumberData resultData = _wheelController.GetNumberData(winningNumber);
+        _resultData = _wheelController.GetNumberData(winningNumber);
 
-        _ballController.StartSpin(resultData);
+        _ballController.StartSpin(_resultData);
         OnSpinStarted?.Invoke();
 
         _ballController.OnBallSpinCompleted -= OnBallSpinComplete;
         _ballController.OnBallSpinCompleted += OnBallSpinComplete;
 
-        Debug.Log("Winning Number: " + resultData.Number);
-        Debug.Log("Winning Number Type: " + resultData.NumberType);
+        Debug.Log("Winning Number: " + _resultData.Number);
+        Debug.Log("Winning Number Type: " + _resultData.NumberType);
     }
 
     private void OnBallSpinComplete()
     {
         OnSpinCompleted?.Invoke();
+        OnSpinDataReceived?.Invoke(_resultData);
     }
 
     private void SetPredeterminedNumber(int number)

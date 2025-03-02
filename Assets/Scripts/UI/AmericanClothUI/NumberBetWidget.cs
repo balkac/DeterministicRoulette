@@ -38,7 +38,7 @@ public class NumberBetWidget : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         _initialScale = transform.localScale;
         _highlightedImage.enabled = false;
     }
-
+    
     private void OnValidate()
     {
         UpdateImageColor();
