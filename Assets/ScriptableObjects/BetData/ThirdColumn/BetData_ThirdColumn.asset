@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d896e57d46649f7b0baf4f44bbc019d, type: 3}
+  m_Name: BetData_ThirdColumn
+  m_EditorClassIdentifier: 
+  BetType: 16
+  Numbers: 0300000006000000090000000c0000000f0000001200000015000000180000001b0000001e0000002100000024000000
+  PayoutMultiplier: 2
+  Condition: {fileID: 11400000, guid: b5d164fb1cf774fc4b7dc05696edb807, type: 2}

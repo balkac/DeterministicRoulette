@@ -8887,11 +8887,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a65afaa40f14b90aa3f61c789649bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationDuration: 0.125
+  _targetScale: {x: 0.95, y: 0.95, z: 0.95}
   _rouletteManager: {fileID: 938277565}
   _canvasGroup: {fileID: 1703421634}
   _spinButton: {fileID: 1703421633}
-  _animationDuration: 0.125
-  _targetScale: {x: 0.95, y: 0.95, z: 0.95}
 --- !u!1001 &1730891553
 PrefabInstance:
   m_ObjectHideFlags: 0

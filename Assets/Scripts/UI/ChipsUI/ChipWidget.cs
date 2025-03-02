@@ -1,13 +1,21 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ChipWidget : MonoBehaviour
 {
     [SerializeField] private int _chipValue;
-
     [SerializeField] private TextMeshProUGUI _chipText;
+    [SerializeField] private Button _chipButton;
+    private ChipManager _chipManager;
 
-    private void OnValidate()
+    private void Awake()
+    {
+        _chipManager = ChipManager.Instance;
+        _chipButton.onClick.AddListener(OnChipSelected);
+    }
+
+    private void Start()
     {
         UpdateChipText();
     }
@@ -18,5 +26,10 @@ public class ChipWidget : MonoBehaviour
         {
             _chipText.text = _chipValue.ToString();
         }
+    }
+
+    private void OnChipSelected()
+    {
+        _chipManager.SetSelectedChip(_chipValue);
     }
 }
