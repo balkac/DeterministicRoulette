@@ -7,6 +7,7 @@ public class RouletteManager : MonoBehaviour
     [SerializeField] private WheelController _wheelController;
     [SerializeField] private BallController _ballController;
     [SerializeField] private SpinButtonWidget _spinButtonWidget;
+    [SerializeField] private AmericanClothUI _americanClothUI;
 
     [Tooltip("-2 means random")] [SerializeField]
     private int _predeterminedNumber = -2;
@@ -16,11 +17,25 @@ public class RouletteManager : MonoBehaviour
 
     private void Awake()
     {
+        _americanClothUI.OnNumberSelected += OnNumberSelected;
+        _americanClothUI.OnNumberDeselected += OnNumberDeselected;
         _spinButtonWidget.OnSpinButtonPressed += OnSpinButtonPressed;
+    }
+
+    private void OnNumberDeselected()
+    {
+        SetPredeterminedNumber(-2);
+    }
+
+    private void OnNumberSelected(int number)
+    {
+        SetPredeterminedNumber(number);
     }
 
     private void OnDestroy()
     {
+        _americanClothUI.OnNumberSelected -= OnNumberSelected;
+        _americanClothUI.OnNumberDeselected -= OnNumberDeselected;
         _spinButtonWidget.OnSpinButtonPressed -= OnSpinButtonPressed;
         _ballController.OnBallSpinCompleted -= OnSpinCompleted;
     }
@@ -62,7 +77,7 @@ public class RouletteManager : MonoBehaviour
         OnSpinCompleted?.Invoke();
     }
 
-    public void SetPredeterminedNumber(int number)
+    private void SetPredeterminedNumber(int number)
     {
         _predeterminedNumber = number;
     }

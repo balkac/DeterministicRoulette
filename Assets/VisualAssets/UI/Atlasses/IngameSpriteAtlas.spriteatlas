@@ -38,6 +38,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 51026850efd2a42d6a7cff7bf03f1029: 21300000
+    - 86d4d714996c5491ab4c2cf764733116: 21300000
     - 513e1e34564074ec1a1fad55a74b267d: 21300000
     - 28c257066d2b7404b95710f3192a15f2: 21300000
     - 4cdfcf066d8ff4c8cadc9a96b1727afd: 21300000
@@ -49,6 +50,7 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 51026850efd2a42d6a7cff7bf03f1029, type: 3}
+  - {fileID: 21300000, guid: 86d4d714996c5491ab4c2cf764733116, type: 3}
   - {fileID: 21300000, guid: 513e1e34564074ec1a1fad55a74b267d, type: 3}
   - {fileID: 21300000, guid: 28c257066d2b7404b95710f3192a15f2, type: 3}
   - {fileID: 21300000, guid: 4cdfcf066d8ff4c8cadc9a96b1727afd, type: 3}
@@ -59,6 +61,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5444d58b361594f3f92b4a6e1ce687d6, type: 3}
   m_PackedSpriteNamesToIndex:
   - chip10
+  - Alert_Text_s_White_Border
   - chip5
   - spinbutton
   - chip25
