@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6eb58e2c-0452-4a73-beb5-3c7ded76f205" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AmericanClothUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AmericanClothUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ChipsUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ChipsUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SpinButtonWidget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SpinButtonWidget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VisualAssets/UI/Ingame/spinbutton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VisualAssets/UI/Ingame/spinbutton.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DeterministicRoulette/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DeterministicRoulette/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/AmericanRoulette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/AmericanRoulette.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ChipWidget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ChipWidget.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/NumberBetWidget_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/NumberBetWidget_1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AmericanRoulette.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AmericanRoulette.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/BallController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/BallController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameScripts/RouletteManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameScripts/RouletteManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ChipWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ChipWidget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NumberBetWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/NumberBetWidget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wheel/Editor/WheelControllerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wheel/Editor/WheelControllerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wheel/WheelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wheel/WheelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VisualAssets/UI/Atlasses/IngameSpriteAtlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VisualAssets/UI/Atlasses/IngameSpriteAtlas.spriteatlas" afterDir="false" />
-    </list>
+    <list default="true" id="6eb58e2c-0452-4a73-beb5-3c7ded76f205" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +105,7 @@
       <workItem from="1740788266830" duration="649000" />
       <workItem from="1740824489588" duration="5516000" />
       <workItem from="1740834168172" duration="4163000" />
-      <workItem from="1740857183338" duration="7666000" />
+      <workItem from="1740857183338" duration="7701000" />
     </task>
     <servers />
   </component>
