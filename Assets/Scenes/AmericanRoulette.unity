@@ -5545,10 +5545,79 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b9ac4ef28fb2b4ac3ae0e711126c72b4, type: 2}
     - {fileID: 11400000, guid: 48fff482562094ceaa6efd190b31a61a, type: 2}
     - {fileID: 11400000, guid: b3c41c7a66fa444ff87590579a8e3b2f, type: 2}
-  - BetType: 0
-    Bets: []
-  - BetType: 0
-    Bets: []
+  - BetType: 3
+    Bets:
+    - {fileID: 11400000, guid: bef290ad590764f768444e05a3c58edd, type: 2}
+    - {fileID: 11400000, guid: 323ce5606ae9d48be98980f1f261d856, type: 2}
+    - {fileID: 11400000, guid: fb3d3d64432094a1293e9fa5a6ee0a81, type: 2}
+    - {fileID: 11400000, guid: c480d633e63f6481d86d2be5de270735, type: 2}
+    - {fileID: 11400000, guid: 2249f9d24d4ca4d4282e472b24db75e3, type: 2}
+    - {fileID: 11400000, guid: 90c55dc73baec45deb061e16ac94add9, type: 2}
+    - {fileID: 11400000, guid: 400852dd7e88049208078bf73a17601d, type: 2}
+    - {fileID: 11400000, guid: bff32d13ce26847e2b801ada98e72afc, type: 2}
+    - {fileID: 11400000, guid: 5f294a15e73ae4b708117ec2425957c6, type: 2}
+    - {fileID: 11400000, guid: 58c6c189a60234c80a83913b5448b0f6, type: 2}
+    - {fileID: 11400000, guid: 9c83bf8f1786e490da0bbdc057602aed, type: 2}
+    - {fileID: 11400000, guid: 4220cd773113843b388cd5f123ef5152, type: 2}
+    - {fileID: 11400000, guid: 2057b87661a824e36a2d1f8c24224117, type: 2}
+    - {fileID: 11400000, guid: 268ebc458c39b4487b3ded79053a380a, type: 2}
+    - {fileID: 11400000, guid: b99c701dbf3a94097ab68e879313eecc, type: 2}
+    - {fileID: 11400000, guid: 3a9716f2b39cc4d6c88c187cff2c946b, type: 2}
+    - {fileID: 11400000, guid: f8806104455054bf09907ff7c204025e, type: 2}
+    - {fileID: 11400000, guid: 3dc38e31fc798422a8d9dfbc230e1cc5, type: 2}
+    - {fileID: 11400000, guid: 18c066f056ae74b3a8b7b9e445993283, type: 2}
+    - {fileID: 11400000, guid: 62af96ada335047cea2f0469941c80bf, type: 2}
+    - {fileID: 11400000, guid: cb928c2822bf948edbc7883921f52fa1, type: 2}
+    - {fileID: 11400000, guid: 449be8fcea2044fb28b69849f4107ce3, type: 2}
+  - BetType: 4
+    Bets:
+    - {fileID: 11400000, guid: 9a0e12194df874a84a8dfdb0cd18f5f2, type: 2}
+    - {fileID: 11400000, guid: f63d59dfa316842d2bf8e61b2a6fe603, type: 2}
+    - {fileID: 11400000, guid: f8c96b086d8da4556bcdb804392533c2, type: 2}
+    - {fileID: 11400000, guid: 2bb0296b63aef4e7da7c4610d1b7e523, type: 2}
+    - {fileID: 11400000, guid: 44e77cfaab0b64c5987de9666d6c0c07, type: 2}
+    - {fileID: 11400000, guid: 4f0c7d81fd73f4fed83a1c99cdaeb333, type: 2}
+    - {fileID: 11400000, guid: 31c9bacd58016413da293402ed792705, type: 2}
+    - {fileID: 11400000, guid: 0489a678fd1344da78a5669b85a6936d, type: 2}
+    - {fileID: 11400000, guid: 011682e78c5044556b9dc7fa1ca452a8, type: 2}
+    - {fileID: 11400000, guid: 3e79fa741c0684cc2b5a57fa4eb4f3ab, type: 2}
+    - {fileID: 11400000, guid: 54a7dd0e5c3cb48f7a610a32342ae635, type: 2}
+  - BetType: 5
+    Bets:
+    - {fileID: 11400000, guid: ffc2ad30e7edf4f3cb95937a471ba110, type: 2}
+  - BetType: 6
+    Bets:
+    - {fileID: 11400000, guid: d5abfbb6e6c284045b975886872669c9, type: 2}
+  - BetType: 7
+    Bets:
+    - {fileID: 11400000, guid: 27311dfe439c545f9b43edf2cefd2f88, type: 2}
+  - BetType: 8
+    Bets:
+    - {fileID: 11400000, guid: b67e41c28ee714182b5eb32b7ea7dda7, type: 2}
+  - BetType: 9
+    Bets:
+    - {fileID: 11400000, guid: b123ce8bebe014a9a8c8e60af54faede, type: 2}
+  - BetType: 10
+    Bets:
+    - {fileID: 11400000, guid: 8711944386bf844e2a915570e67121c9, type: 2}
+  - BetType: 11
+    Bets:
+    - {fileID: 11400000, guid: a028bc6de0ba24c3086cf5d04481b3d8, type: 2}
+  - BetType: 12
+    Bets:
+    - {fileID: 11400000, guid: a75f1ef60e02f4b7080deedfa0e34e2c, type: 2}
+  - BetType: 13
+    Bets:
+    - {fileID: 11400000, guid: c522c8e8f75c14016969f9b57783f0d0, type: 2}
+  - BetType: 14
+    Bets:
+    - {fileID: 11400000, guid: 3c39d0879e3d049898532989e102380e, type: 2}
+  - BetType: 15
+    Bets:
+    - {fileID: 11400000, guid: 1cc133e16b5bc47f188d24af36cdc6e3, type: 2}
+  - BetType: 16
+    Bets:
+    - {fileID: 11400000, guid: 954b137a308884db695430b68bd31542, type: 2}
 --- !u!1 &1061633164
 GameObject:
   m_ObjectHideFlags: 0
