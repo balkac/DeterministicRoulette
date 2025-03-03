@@ -5,12 +5,12 @@ public class BetCondition : ScriptableObject, IBetCondition
 {
     public BetType BetType;
 
-    public bool Evaluate(int winningNumber)
+    public bool Evaluate(int winningNumber, int[] numbers)
     {
         switch (BetType)
         {
             case BetType.Red: return IsRed(winningNumber);
-            case BetType.Black: return !IsRed(winningNumber);
+            case BetType.Black: return !IsRed(winningNumber) && winningNumber > 0;
             case BetType.Even: return winningNumber % 2 == 0;
             case BetType.Odd: return winningNumber % 2 != 0;
             case BetType.High: return winningNumber >= 19;
@@ -21,7 +21,7 @@ public class BetCondition : ScriptableObject, IBetCondition
             case BetType.FirstColumn: return (winningNumber - 1) % 3 == 0;
             case BetType.SecondColumn: return (winningNumber - 2) % 3 == 0;
             case BetType.ThirdColumn: return (winningNumber - 3) % 3 == 0;
-            default: return false;
+            default: return System.Array.Exists(numbers, n => n == winningNumber);
         }
     }
 
