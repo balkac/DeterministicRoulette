@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class ChipManager : Singleton<ChipManager>
 {
@@ -22,7 +23,10 @@ public class ChipManager : Singleton<ChipManager>
         {
             _betAmounts[betData] = new List<Chip>();
         }
+
         _betAmounts[betData].Add(chip);
+        Debug.Log(
+            $"[ChipManager] Chip placed on {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Total Bet: {GetBetAmount(betData)}");
     }
 
     public int GetBetAmount(BetData betData)
@@ -35,18 +39,27 @@ public class ChipManager : Singleton<ChipManager>
         if (_betAmounts.ContainsKey(betData))
         {
             _betAmounts.Remove(betData);
+            Debug.Log(
+                $"[ChipManager] Bet removed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetBetAmount(betData)}");
         }
     }
 
-    public void RemoveLastPlacedChip(BetData betData)
+    public bool TryRemoveLastPlacedChip(BetData betData)
     {
         if (_betAmounts.TryGetValue(betData, out var chips) && chips.Count > 0)
         {
+            Chip removedChip = chips.Last();
             chips.RemoveAt(chips.Count - 1);
+            Debug.Log(
+                $"[ChipManager] Removed last chip ({removedChip.Value}) from {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetBetAmount(betData)}");
             if (chips.Count == 0)
             {
                 _betAmounts.Remove(betData);
             }
+
+            return true;
         }
+
+        return false;
     }
 }

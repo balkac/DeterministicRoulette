@@ -5,9 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Linq;
 
 public class NumberBetWidget : ButtonWidgetBase
 {
+    [SerializeField] BetType _betType = BetType.Straight;
     [SerializeField] private Color _redContainerColor;
     [SerializeField] private Color _blackContainerColor;
     [SerializeField] private Color _greenContainerColor;
@@ -20,7 +22,7 @@ public class NumberBetWidget : ButtonWidgetBase
     [SerializeField] private Transform _chipWidgetsParent;
     [SerializeField] private Button _button;
     public ENumberType NumberType;
-    public string Number;
+    public List<int> Numbers;
     public Image ContainerImage;
     public TextMeshProUGUI NumberText;
 
@@ -47,14 +49,24 @@ public class NumberBetWidget : ButtonWidgetBase
     {
         if (ChipManager.Instance.GetSelectedChip() != null)
         {
-            PlaceSplitBet();
+            PlaceBet();
             PlaceChipImage();
+        }
+        else
+        {
+            RemoveLastBetByType();
+            RemoveChipImage();
         }
     }
 
-    private void PlaceSplitBet()
+    private void PlaceBet()
     {
-        BetManager.Instance.PlaceSplitBet(GetNumber());
+        BetManager.Instance.PlaceBetByType(_betType, GetNumbers());
+    }
+
+    private void RemoveLastBetByType()
+    {
+        BetManager.Instance.TryRemoveLastBetByType(_betType, GetNumbers());
     }
 
     private void PlaceChipImage()
@@ -74,23 +86,31 @@ public class NumberBetWidget : ButtonWidgetBase
 
         chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
     }
+    
+    private void RemoveChipImage()
+    {
+        if (_placedChips.Count > 0)
+        {
+            ChipWidget chipWidget = _placedChips[^1];
+            chipWidget.Deactivate();
+            _placedChips.RemoveAt(_placedChips.Count - 1);
+        }
+    }
 
     private void OnValidate()
     {
-        UpdateImageColor();
-        UpdateText();
-        UpdateTextMaterial();
-        UpdateGameObjectName();
+        if (_betType == BetType.Straight && Numbers.Count > 0)
+        {
+            UpdateImageColor();
+            UpdateText();
+            UpdateTextMaterial();
+            UpdateGameObjectName();
+        }
     }
 
-    public int GetNumber()
+    public List<int> GetNumbers()
     {
-        if (Number == "00")
-        {
-            return -1;
-        }
-
-        return int.Parse(Number);
+        return Numbers;
     }
 
     private void UpdateImageColor()
@@ -113,7 +133,13 @@ public class NumberBetWidget : ButtonWidgetBase
     {
         if (NumberText != null)
         {
-            NumberText.text = Number;
+            if (Numbers[0] == -1)
+            {
+                NumberText.text = "00";
+                return;
+            }
+
+            NumberText.text = Numbers[0].ToString();
         }
     }
 
@@ -135,7 +161,7 @@ public class NumberBetWidget : ButtonWidgetBase
 
     private void UpdateGameObjectName()
     {
-        gameObject.name = "NumberBetWidget_" + Number;
+        gameObject.name = "NumberBetWidget_" + string.Join("_", Numbers.Select(n => n == -1 ? "00" : n.ToString()));
     }
 
     public override void OnPointerDown(PointerEventData eventData)

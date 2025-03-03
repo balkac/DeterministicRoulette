@@ -41,7 +41,7 @@ public class AmericanClothUI : MonoBehaviour
         }
 
         _selectedNumberBetWidget = numberBetWidget;
-        OnNumberSelected?.Invoke(numberBetWidget.GetNumber());
+        OnNumberSelected?.Invoke(numberBetWidget.GetNumbers()[0]);
     }
 
     private void OnSpinStarted()

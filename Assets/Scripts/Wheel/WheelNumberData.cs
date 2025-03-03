@@ -13,7 +13,8 @@ public class WheelNumberData
 
 public enum ENumberType
 {
-    Red,
-    Black,
-    Green
+    Red = 0,
+    Black = 1,
+    Green = 2,
+    None = 3,
 }
