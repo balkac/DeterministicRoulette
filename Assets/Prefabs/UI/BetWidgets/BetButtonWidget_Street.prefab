@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a5a415fd0c45359b4bd180945691a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canAnimate: 1
+  _canAnimate: 0
   _animationDuration: 0.125
   _targetScale: {x: 0.95, y: 0.95, z: 0.95}
   _betType: 2
