@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 5168538121127717876}
   - component: {fileID: 5682144610827584101}
   m_Layer: 5
-  m_Name: NumberBetWidget_1
+  m_Name: NumberBetWidget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,8 +337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcd47976fbd04c32922ed99bda2a6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canAnimate: 1
   _animationDuration: 0.125
   _targetScale: {x: 0.95, y: 0.95, z: 0.95}
+  _betType: 0
+  _chipWidgetsParent: {fileID: 6490093378080372805}
+  _button: {fileID: 5682144610827584101}
+  Numbers: 
   _redContainerColor: {r: 1, g: 0, b: 0, a: 1}
   _blackContainerColor: {r: 0, g: 0, b: 0, a: 1}
   _greenContainerColor: {r: 0.38124967, g: 1, b: 0, a: 1}
@@ -346,10 +351,7 @@ MonoBehaviour:
   _blackTextMaterial: {fileID: 2100000, guid: 8fad38d2cbbe94c25a23aeffd0aac05f, type: 2}
   _greenTextMaterial: {fileID: 2100000, guid: ef0fc5164f2280042a24fe77fce73170, type: 2}
   _highlightedImage: {fileID: 3735310607693588910}
-  _chipWidgetsParent: {fileID: 6490093378080372805}
-  _button: {fileID: 5682144610827584101}
   NumberType: 0
-  Number: 1
   ContainerImage: {fileID: 594408053191812988}
   NumberText: {fileID: 7156465162588713001}
 --- !u!114 &5682144610827584101

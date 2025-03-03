@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,9 +6,8 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Linq;
 
-public class NumberBetWidget : ButtonWidgetBase
+public class NumberBetButtonWidget : BetButtonWidget
 {
-    [SerializeField] BetType _betType = BetType.Straight;
     [SerializeField] private Color _redContainerColor;
     [SerializeField] private Color _blackContainerColor;
     [SerializeField] private Color _greenContainerColor;
@@ -19,83 +17,23 @@ public class NumberBetWidget : ButtonWidgetBase
     [SerializeField] private Material _greenTextMaterial;
 
     [SerializeField] private Image _highlightedImage;
-    [SerializeField] private Transform _chipWidgetsParent;
-    [SerializeField] private Button _button;
+
     public ENumberType NumberType;
-    public List<int> Numbers;
     public Image ContainerImage;
     public TextMeshProUGUI NumberText;
 
-    private Coroutine _pressCoroutine;
+    private Coroutine _holdCoroutine;
     private bool _isSelectedAsPredetermined = false;
-    private List<ChipWidget> _placedChips = new List<ChipWidget>();
 
-    public Action<NumberBetWidget> OnNumberBetWidgetSelected;
-    public Action<NumberBetWidget> OnNumberBetWidgetDeselected;
+    public Action<NumberBetButtonWidget> OnNumberBetWidgetSelected;
+    public Action<NumberBetButtonWidget> OnNumberBetWidgetDeselected;
 
     protected override void AwakeCustomActions()
     {
         base.AwakeCustomActions();
         _highlightedImage.enabled = false;
-        _button.onClick.AddListener(OnButtonClick);
     }
 
-    private void OnDestroy()
-    {
-        _button.onClick.RemoveListener(OnButtonClick);
-    }
-
-    private void OnButtonClick()
-    {
-        if (ChipManager.Instance.GetSelectedChip() != null)
-        {
-            PlaceBet();
-            PlaceChipImage();
-        }
-        else
-        {
-            RemoveLastBetByType();
-            RemoveChipImage();
-        }
-    }
-
-    private void PlaceBet()
-    {
-        BetManager.Instance.PlaceBetByType(_betType, GetNumbers());
-    }
-
-    private void RemoveLastBetByType()
-    {
-        BetManager.Instance.TryRemoveLastBetByType(_betType, GetNumbers());
-    }
-
-    private void PlaceChipImage()
-    {
-        GameObject chipWidgetGo = PoolManager.Instance.GetObjectFromPool<ChipWidget>();
-
-        chipWidgetGo.transform.SetParent(_chipWidgetsParent);
-
-        ChipWidget chipWidget = chipWidgetGo.GetComponent<ChipWidget>();
-
-        _placedChips.Add(chipWidget);
-
-        RectTransform rectTransform = chipWidget.GetComponent<RectTransform>();
-        rectTransform.localPosition = Vector3.zero + new Vector3(0f, 5f * (_placedChips.Count), 0f);
-        rectTransform.localRotation = Quaternion.identity;
-        rectTransform.localScale = Vector3.one * 0.5f;
-
-        chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
-    }
-    
-    private void RemoveChipImage()
-    {
-        if (_placedChips.Count > 0)
-        {
-            ChipWidget chipWidget = _placedChips[^1];
-            chipWidget.Deactivate();
-            _placedChips.RemoveAt(_placedChips.Count - 1);
-        }
-    }
 
     private void OnValidate()
     {
@@ -106,11 +44,6 @@ public class NumberBetWidget : ButtonWidgetBase
             UpdateTextMaterial();
             UpdateGameObjectName();
         }
-    }
-
-    public List<int> GetNumbers()
-    {
-        return Numbers;
     }
 
     private void UpdateImageColor()
@@ -161,21 +94,22 @@ public class NumberBetWidget : ButtonWidgetBase
 
     private void UpdateGameObjectName()
     {
-        gameObject.name = "NumberBetWidget_" + string.Join("_", Numbers.Select(n => n == -1 ? "00" : n.ToString()));
+        gameObject.name = "NumberBetWidget_" + _betType + "_" +
+                          string.Join("_", Numbers.Select(n => n == -1 ? "00" : n.ToString()));
     }
 
     public override void OnPointerDown(PointerEventData eventData)
     {
         _isPointerDown = true;
-        _pressCoroutine = StartCoroutine(PressDurationCoroutine());
+        _holdCoroutine = StartCoroutine(PressDurationCoroutine());
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
         _isPointerDown = false;
-        if (_pressCoroutine != null)
+        if (_holdCoroutine != null)
         {
-            StopCoroutine(_pressCoroutine);
+            StopCoroutine(_holdCoroutine);
         }
 
         if (!_isSelectedAsPredetermined)

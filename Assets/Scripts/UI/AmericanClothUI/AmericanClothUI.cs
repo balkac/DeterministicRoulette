@@ -7,17 +7,17 @@ public class AmericanClothUI : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private RouletteManager _rouletteManager;
 
-    private List<NumberBetWidget> _numberBetWidgets;
-    private NumberBetWidget _selectedNumberBetWidget;
+    private List<NumberBetButtonWidget> _numberBetWidgets;
+    private NumberBetButtonWidget _selectedNumberBetButtonWidget;
 
     public Action<int> OnNumberSelected;
     public Action OnNumberDeselected;
 
     private void Awake()
     {
-        _numberBetWidgets = new List<NumberBetWidget>(GetComponentsInChildren<NumberBetWidget>());
+        _numberBetWidgets = new List<NumberBetButtonWidget>(GetComponentsInChildren<NumberBetButtonWidget>());
 
-        foreach (NumberBetWidget numberBetWidget in _numberBetWidgets)
+        foreach (NumberBetButtonWidget numberBetWidget in _numberBetWidgets)
         {
             numberBetWidget.OnNumberBetWidgetSelected += OnNumberBetWidgetSelected;
             numberBetWidget.OnNumberBetWidgetDeselected += OnNumberBetWidgetDeselected;
@@ -27,21 +27,21 @@ public class AmericanClothUI : MonoBehaviour
         _rouletteManager.OnSpinCompleted += OnSpinCompleted;
     }
 
-    private void OnNumberBetWidgetDeselected(NumberBetWidget obj)
+    private void OnNumberBetWidgetDeselected(NumberBetButtonWidget obj)
     {
-        _selectedNumberBetWidget = null;
+        _selectedNumberBetButtonWidget = null;
         OnNumberDeselected?.Invoke();
     }
 
-    private void OnNumberBetWidgetSelected(NumberBetWidget numberBetWidget)
+    private void OnNumberBetWidgetSelected(NumberBetButtonWidget numberBetButtonWidget)
     {
-        if (_selectedNumberBetWidget != null)
+        if (_selectedNumberBetButtonWidget != null)
         {
-            _selectedNumberBetWidget.TryDeselect();
+            _selectedNumberBetButtonWidget.TryDeselect();
         }
 
-        _selectedNumberBetWidget = numberBetWidget;
-        OnNumberSelected?.Invoke(numberBetWidget.GetNumbers()[0]);
+        _selectedNumberBetButtonWidget = numberBetButtonWidget;
+        OnNumberSelected?.Invoke(numberBetButtonWidget.GetNumbers()[0]);
     }
 
     private void OnSpinStarted()
@@ -56,7 +56,7 @@ public class AmericanClothUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (NumberBetWidget numberBetWidget in _numberBetWidgets)
+        foreach (NumberBetButtonWidget numberBetWidget in _numberBetWidgets)
         {
             numberBetWidget.OnNumberBetWidgetDeselected -= OnNumberBetWidgetDeselected;
             numberBetWidget.OnNumberBetWidgetSelected -= OnNumberBetWidgetSelected;

@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public abstract class ButtonWidgetBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    [SerializeField] private bool _canAnimate = true;
     [SerializeField] private float _animationDuration = 0.125f;
     [SerializeField] private Vector3 _targetScale = new Vector3(0.95f, 0.95f, 0.95f);
 
@@ -24,6 +25,11 @@ public abstract class ButtonWidgetBase : MonoBehaviour, IPointerDownHandler, IPo
 
     protected virtual void Update()
     {
+        if (!_canAnimate)
+        {
+            return;
+        }
+
         if (_isPointerDown)
         {
             transform.localScale =

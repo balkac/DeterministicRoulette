@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_2
+      value: NumberBetWidget_Straight_2
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_17
+      value: NumberBetWidget_Straight_17
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -838,7 +838,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_36
+      value: NumberBetWidget_Straight_36
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -1068,7 +1068,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_28
+      value: NumberBetWidget_Straight_28
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -1414,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_4
+      value: NumberBetWidget_Straight_4
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -1729,7 +1729,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_0
+      value: NumberBetWidget_Straight_0
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -3098,7 +3098,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_6
+      value: NumberBetWidget_Straight_6
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -3252,7 +3252,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_32
+      value: NumberBetWidget_Straight_32
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -3396,7 +3396,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_9
+      value: NumberBetWidget_Straight_9
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -3550,7 +3550,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_35
+      value: NumberBetWidget_Straight_35
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -3641,7 +3641,7 @@ Canvas:
   m_GameObject: {fileID: 800051381}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 330585545}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -3859,7 +3859,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_5
+      value: NumberBetWidget_Straight_5
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -4638,7 +4638,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_12
+      value: NumberBetWidget_Straight_12
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -4867,7 +4867,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_15
+      value: NumberBetWidget_Straight_15
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -5016,7 +5016,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_3
+      value: NumberBetWidget_Straight_3
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -5472,10 +5472,79 @@ MonoBehaviour:
     - {fileID: 11400000, guid: aca8fd98fe58d4cf6b44375a172c8606, type: 2}
     - {fileID: 11400000, guid: ae14fad1ca37b427ca02efdd6641f3d0, type: 2}
     - {fileID: 11400000, guid: 347d46538a9b0434e8f60b38517677ca, type: 2}
-  - BetType: 0
-    Bets: []
-  - BetType: 0
-    Bets: []
+  - BetType: 1
+    Bets:
+    - {fileID: 11400000, guid: 51735a7058fd94c67974d8e67a8443a5, type: 2}
+    - {fileID: 11400000, guid: a96fbbc7eb4eb4697950dc3e917ae2ef, type: 2}
+    - {fileID: 11400000, guid: 23f5c027b34b94e15af00dc9897f0147, type: 2}
+    - {fileID: 11400000, guid: e6aa04405e55b4d10a130b5c04b91b22, type: 2}
+    - {fileID: 11400000, guid: b30e04569af424139b205c08b49f4169, type: 2}
+    - {fileID: 11400000, guid: 543128c0cdb6b4717a5eb0ebee2c6b0e, type: 2}
+    - {fileID: 11400000, guid: c7ace8dd366544c4db857cff6005ce32, type: 2}
+    - {fileID: 11400000, guid: 8a88708b6210b418d88222d51fb57dba, type: 2}
+    - {fileID: 11400000, guid: ecb4e70e9fccd4d5cb5da27155bcf265, type: 2}
+    - {fileID: 11400000, guid: fef3376e89027497cab99534b0b265ca, type: 2}
+    - {fileID: 11400000, guid: 6d6c385aad0af4cc6ac353236fc7a666, type: 2}
+    - {fileID: 11400000, guid: e178323fd3f8a4f839264a7a0767ffec, type: 2}
+    - {fileID: 11400000, guid: cb9f2c7e827764716a40bec79c6dff06, type: 2}
+    - {fileID: 11400000, guid: d2c9659f0b9d948038f6a5d434fd760a, type: 2}
+    - {fileID: 11400000, guid: 0738c38f536ec408596b39765f84c727, type: 2}
+    - {fileID: 11400000, guid: c44a10d32cc444ddd8fc2e183da24746, type: 2}
+    - {fileID: 11400000, guid: ea499789800674bee851d8d7251dd818, type: 2}
+    - {fileID: 11400000, guid: d9aae943e86784e8ca6d4ebfe1d10c3d, type: 2}
+    - {fileID: 11400000, guid: 6e5171ed8d4004fc48c98d3aaea1e794, type: 2}
+    - {fileID: 11400000, guid: 32a01f0d74a3044a29dd594d33ae9d5c, type: 2}
+    - {fileID: 11400000, guid: a0a6d3e7dc41945ca84b6c35f45c0f74, type: 2}
+    - {fileID: 11400000, guid: f4b1adfc6a2d1439eb3ba9981191027a, type: 2}
+    - {fileID: 11400000, guid: dcbefa77717dd40e48136fc9724e3f42, type: 2}
+    - {fileID: 11400000, guid: a070000eb5a654f029026f85774b1cd5, type: 2}
+    - {fileID: 11400000, guid: 81dd1e2140cde457eb212f52ed28dfe8, type: 2}
+    - {fileID: 11400000, guid: ed988d04dcc9b41c2a65770b4f3d4d62, type: 2}
+    - {fileID: 11400000, guid: 814ce204e7c6e4959914a7dda4711f34, type: 2}
+    - {fileID: 11400000, guid: 052b762fc834048ecbc81504d1994039, type: 2}
+    - {fileID: 11400000, guid: c4b4b2e295de24e13b321a621043c54b, type: 2}
+    - {fileID: 11400000, guid: 02f3dbff6feb24fc3b9c55ce67828b99, type: 2}
+    - {fileID: 11400000, guid: 7a7c963fd64ee436a9ec0c701af8af48, type: 2}
+    - {fileID: 11400000, guid: b1eaa10fca23e4535be07c63a4a6bcd0, type: 2}
+    - {fileID: 11400000, guid: 2583199a36d1649078fa0c1458054232, type: 2}
+    - {fileID: 11400000, guid: bf5eef7d81b7344919f0b50e38a53c7e, type: 2}
+    - {fileID: 11400000, guid: 4ef311898737c46238c5f4307d4ee48d, type: 2}
+    - {fileID: 11400000, guid: f997b38fcb01f415e8737e908f0f3d0f, type: 2}
+    - {fileID: 11400000, guid: 92b7bdea92b9a4a4596b84701a513c91, type: 2}
+    - {fileID: 11400000, guid: 5d24d049d25d94f3ba82eea47cb2290d, type: 2}
+    - {fileID: 11400000, guid: e1869c8214caf4aa1b12c3b6691ae8f6, type: 2}
+    - {fileID: 11400000, guid: f98fc235f0d9b414e998de966e8c09e1, type: 2}
+    - {fileID: 11400000, guid: 0aed6b5d63fe64063b462d6ab49acc94, type: 2}
+    - {fileID: 11400000, guid: ad047481b29d841adbdb191e292be5ab, type: 2}
+    - {fileID: 11400000, guid: 4c2b687e88a9548df93ca0d5a224e1bf, type: 2}
+    - {fileID: 11400000, guid: d5c6e56ba35254f1781cb24fb1df2a7b, type: 2}
+    - {fileID: 11400000, guid: 019b56276bda54550a8c7d044966b261, type: 2}
+    - {fileID: 11400000, guid: 3a0b7feeeb8b543849671b23e4424c2c, type: 2}
+    - {fileID: 11400000, guid: 54db03f240f9145568cfa96c1ede1f14, type: 2}
+    - {fileID: 11400000, guid: 3aa8996234393425385fe72e701d56eb, type: 2}
+    - {fileID: 11400000, guid: 20a67ebe3f5d445d28759f5d0538d868, type: 2}
+    - {fileID: 11400000, guid: a0b185ae9adec47a8bfae7858252c152, type: 2}
+    - {fileID: 11400000, guid: d0b68c26d732c4e828163e32f1fe2aab, type: 2}
+    - {fileID: 11400000, guid: 788d2ae35da2641549732f5172cd7b07, type: 2}
+    - {fileID: 11400000, guid: 069a6080281e84f41983ef5487233c95, type: 2}
+    - {fileID: 11400000, guid: b6b7841e8337741959d3d7394a017455, type: 2}
+    - {fileID: 11400000, guid: 2e0f423c822c64b58bd326e93bded4c9, type: 2}
+    - {fileID: 11400000, guid: 8e1db0618ba224f1bb3f14169c2f5228, type: 2}
+    - {fileID: 11400000, guid: a48770e8f5caa4874a1441dadec715f1, type: 2}
+  - BetType: 2
+    Bets:
+    - {fileID: 11400000, guid: 98f32e849eced466a8b58cee6ed642b1, type: 2}
+    - {fileID: 11400000, guid: 3fdc2afd2408c47d4a23a87a80c06ef0, type: 2}
+    - {fileID: 11400000, guid: aec8f92d7b88c4f46b09eabd39fb45cf, type: 2}
+    - {fileID: 11400000, guid: aa868ba8fd65b41dfbd954e4caff9c45, type: 2}
+    - {fileID: 11400000, guid: 0744581f26166484cb9d4be499ccf32d, type: 2}
+    - {fileID: 11400000, guid: 111a8904a291442929f8154571956441, type: 2}
+    - {fileID: 11400000, guid: c62a52895123a4b6aa972046a6693563, type: 2}
+    - {fileID: 11400000, guid: 49966f789da4a403c98f57db9bffd26b, type: 2}
+    - {fileID: 11400000, guid: 21b6fabaefc304925acdd8a84c51000c, type: 2}
+    - {fileID: 11400000, guid: b9ac4ef28fb2b4ac3ae0e711126c72b4, type: 2}
+    - {fileID: 11400000, guid: 48fff482562094ceaa6efd190b31a61a, type: 2}
+    - {fileID: 11400000, guid: b3c41c7a66fa444ff87590579a8e3b2f, type: 2}
   - BetType: 0
     Bets: []
   - BetType: 0
@@ -5760,7 +5829,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_13
+      value: NumberBetWidget_Straight_13
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -5925,7 +5994,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_24
+      value: NumberBetWidget_Straight_24
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -6506,7 +6575,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_34
+      value: NumberBetWidget_Straight_34
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -6903,7 +6972,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_26
+      value: NumberBetWidget_Straight_26
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -7188,7 +7257,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_14
+      value: NumberBetWidget_Straight_14
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -7332,7 +7401,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_23
+      value: NumberBetWidget_Straight_23
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -7562,7 +7631,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_11
+      value: NumberBetWidget_Straight_11
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -7721,7 +7790,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_29
+      value: NumberBetWidget_Straight_29
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -8120,7 +8189,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_27
+      value: NumberBetWidget_Straight_27
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -8264,7 +8333,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_7
+      value: NumberBetWidget_Straight_7
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -9027,7 +9096,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_18
+      value: NumberBetWidget_Straight_18
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -9181,7 +9250,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_8
+      value: NumberBetWidget_Straight_8
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -9330,7 +9399,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_21
+      value: NumberBetWidget_Straight_21
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -9489,7 +9558,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_00
+      value: NumberBetWidget_Straight_00
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -9758,6 +9827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a65afaa40f14b90aa3f61c789649bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canAnimate: 1
   _animationDuration: 0.125
   _targetScale: {x: 0.95, y: 0.95, z: 0.95}
   _rouletteManager: {fileID: 938277565}
@@ -9899,7 +9969,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_10
+      value: NumberBetWidget_Straight_10
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -10278,7 +10348,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_22
+      value: NumberBetWidget_Straight_22
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -10437,7 +10507,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_33
+      value: NumberBetWidget_Straight_33
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -10586,7 +10656,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_16
+      value: NumberBetWidget_Straight_16
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -10817,7 +10887,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_20
+      value: NumberBetWidget_Straight_20
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -10839,6 +10909,145 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5511532288739576958, guid: 27776b56a6bb240d7acfab389e8f8082,
     type: 3}
   m_PrefabInstance: {fileID: 1841015835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1872304439
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1972037276}
+    m_Modifications:
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010620970714243074, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Name
+      value: BetButtonWidget_Split_1_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -572
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ac53ee0eccd24869879816c367471da, type: 3}
+--- !u!224 &1872304440 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1872304439}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1875394662
 PrefabInstance:
@@ -10966,7 +11175,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_25
+      value: NumberBetWidget_Straight_25
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -11225,6 +11434,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1107273336}
+  - {fileID: 4726079714497819804}
+  - {fileID: 1872304440}
   - {fileID: 294494817}
   - {fileID: 1440137332}
   - {fileID: 1730891554}
@@ -11395,7 +11606,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_19
+      value: NumberBetWidget_Straight_19
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -11765,7 +11976,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_30
+      value: NumberBetWidget_Straight_30
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -12183,7 +12394,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_31
+      value: NumberBetWidget_Straight_31
       objectReference: {fileID: 0}
     - target: {fileID: 7156465162588713001, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
@@ -12294,6 +12505,145 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2afc63d72f5774d90fef50e1785092, type: 3}
+--- !u!224 &4726079714497819804 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+    type: 3}
+  m_PrefabInstance: {fileID: 6972694606447200985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6972694606447200985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1972037276}
+    m_Modifications:
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093308950539646816, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: Numbers.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010620970714243074, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Name
+      value: BetButtonWidget_Split_1_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -520
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721521471261531115, guid: 7ac53ee0eccd24869879816c367471da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ac53ee0eccd24869879816c367471da, type: 3}
 --- !u!1001 &8416059546912069118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12415,7 +12765,7 @@ PrefabInstance:
     - target: {fileID: 6988674441069838192, guid: 27776b56a6bb240d7acfab389e8f8082,
         type: 3}
       propertyPath: m_Name
-      value: NumberBetWidget_1
+      value: NumberBetWidget_Straight_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
