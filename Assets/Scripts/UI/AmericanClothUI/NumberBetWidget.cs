@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,7 +17,8 @@ public class NumberBetWidget : ButtonWidgetBase
     [SerializeField] private Material _greenTextMaterial;
 
     [SerializeField] private Image _highlightedImage;
-
+    [SerializeField] private Transform _chipWidgetsParent;
+    [SerializeField] private Button _button;
     public ENumberType NumberType;
     public string Number;
     public Image ContainerImage;
@@ -24,6 +26,7 @@ public class NumberBetWidget : ButtonWidgetBase
 
     private Coroutine _pressCoroutine;
     private bool _isSelectedAsPredetermined = false;
+    private List<ChipWidget> _placedChips = new List<ChipWidget>();
 
     public Action<NumberBetWidget> OnNumberBetWidgetSelected;
     public Action<NumberBetWidget> OnNumberBetWidgetDeselected;
@@ -32,8 +35,45 @@ public class NumberBetWidget : ButtonWidgetBase
     {
         base.AwakeCustomActions();
         _highlightedImage.enabled = false;
+        _button.onClick.AddListener(OnButtonClick);
     }
 
+    private void OnDestroy()
+    {
+        _button.onClick.RemoveListener(OnButtonClick);
+    }
+
+    private void OnButtonClick()
+    {
+        if (ChipManager.Instance.GetSelectedChip() != null)
+        {
+            PlaceSplitBet();
+            PlaceChipImage();
+        }
+    }
+
+    private void PlaceSplitBet()
+    {
+        BetManager.Instance.PlaceSplitBet(GetNumber());
+    }
+
+    private void PlaceChipImage()
+    {
+        GameObject chipWidgetGo = PoolManager.Instance.GetObjectFromPool<ChipWidget>();
+
+        chipWidgetGo.transform.SetParent(_chipWidgetsParent);
+
+        ChipWidget chipWidget = chipWidgetGo.GetComponent<ChipWidget>();
+
+        _placedChips.Add(chipWidget);
+
+        RectTransform rectTransform = chipWidget.GetComponent<RectTransform>();
+        rectTransform.localPosition = Vector3.zero + new Vector3(0f, 5f * (_placedChips.Count), 0f);
+        rectTransform.localRotation = Quaternion.identity;
+        rectTransform.localScale = Vector3.one * 0.5f;
+
+        chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
+    }
 
     private void OnValidate()
     {

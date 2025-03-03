@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 
 [CreateAssetMenu(fileName = "New Bet Data", menuName = "Roulette/Bet Data")]
 public class BetData : ScriptableObject

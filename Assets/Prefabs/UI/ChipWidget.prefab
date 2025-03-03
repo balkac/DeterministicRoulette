@@ -59,9 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -194,9 +194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -304,9 +304,23 @@ MonoBehaviour:
   _chipValue: 1
   _chipText: {fileID: 819227481085485753}
   _chipButton: {fileID: 2462233936844218843}
+  _chipImage: {fileID: 6221633159953713377}
   _highlightedImage: {fileID: 7426177803833601189}
   _selectedScale: {x: 1.2, y: 1.2, z: 1.2}
   _animationDuration: 0.125
+  _chipWidgetDatas:
+  - ChipValue: 1
+    ChipSprite: {fileID: 21300000, guid: d738984811070447793cfec35559f424, type: 3}
+  - ChipValue: 5
+    ChipSprite: {fileID: 21300000, guid: 513e1e34564074ec1a1fad55a74b267d, type: 3}
+  - ChipValue: 10
+    ChipSprite: {fileID: 21300000, guid: 51026850efd2a42d6a7cff7bf03f1029, type: 3}
+  - ChipValue: 25
+    ChipSprite: {fileID: 21300000, guid: 4cdfcf066d8ff4c8cadc9a96b1727afd, type: 3}
+  - ChipValue: 50
+    ChipSprite: {fileID: 21300000, guid: 10ca0b98d1728407c85beb7a86c3aaca, type: 3}
+  - ChipValue: 100
+    ChipSprite: {fileID: 21300000, guid: ec812fbadc3ee4e89aaf666b9b7a0191, type: 3}
 --- !u!114 &2462233936844218843
 MonoBehaviour:
   m_ObjectHideFlags: 0
