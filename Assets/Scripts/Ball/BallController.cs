@@ -8,10 +8,9 @@ public class BallController : MonoBehaviour
     [SerializeField] private Vector3 _axis = Vector3.up;
     [SerializeField] private float _minAngularSpeed = 60f;
     [SerializeField] private float _maxAngularSpeed = 240f;
-    [SerializeField] private float _minSpinDuration = 3f;
-    [SerializeField] private float _maxSpinDuration = 5f;
-    [SerializeField] private float _distanceThreshold = 0.15f;
+    [SerializeField] private float _minSpinDuration = 5f;
 
+    private float _distanceThreshold = 0.15f;
     private bool _spinning = false;
     private Coroutine _spinCoroutine;
     private Transform _initialParent;
@@ -19,6 +18,7 @@ public class BallController : MonoBehaviour
     private float _angularSpeed;
 
     public Action OnBallSpinCompleted;
+
     private void Awake()
     {
         _initialParent = transform.parent;
@@ -52,27 +52,49 @@ public class BallController : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < _maxSpinDuration)
+        while (elapsedTime < _minSpinDuration)
         {
             elapsedTime += Time.deltaTime;
-            _angularSpeed = Mathf.Max(Mathf.Lerp(_maxAngularSpeed, 0, elapsedTime / _maxSpinDuration),
-                _minAngularSpeed);
-            // Debug.Log($"Angular speed: {_angularSpeed}");
+            _angularSpeed = Mathf.Lerp(_maxAngularSpeed, _minAngularSpeed, elapsedTime / _minSpinDuration);
             yield return null;
+
+            // Check angle condition
+            // float angle = Vector3.Angle(transform.forward, resultData.NumberTransform.forward);
+        }
+
+        elapsedTime = 0f;
+
+        while (elapsedTime < _minSpinDuration)
+        {
+            elapsedTime += Time.deltaTime;
 
             // Check distance condition
             float distance = Vector3.Distance(transform.position, resultData.NumberTransform.position);
-            // Debug.Log($"Distance to target: {distance}");
-            if (distance < _distanceThreshold && elapsedTime >= _minSpinDuration)
+            Debug.Log($"Distance to target: {distance}");
+
+            // Normalize distance to control angular speed smoothly
+
+            if (distance - _distanceThreshold > _distanceThreshold)
+            {
+                yield return null;
+            }
+
+            float nextSpeed = Mathf.Lerp(_minAngularSpeed, 0, 1 / (distance / _distanceThreshold));
+
+            if (nextSpeed < _angularSpeed)
+            {
+                _angularSpeed = Mathf.Max(_angularSpeed - 0.1f, nextSpeed);
+            }
+
+            if (distance < _distanceThreshold)
             {
                 Debug.Log("Distance condition met");
                 break;
             }
 
-            // Check angle condition
-            float angle = Vector3.Angle(transform.forward, resultData.NumberTransform.forward);
-            // Debug.Log($"Angle to target: {angle}");
+            yield return null;
         }
+
 
         _spinning = false;
         transform.SetParent(resultData.NumberTransform);
@@ -82,7 +104,7 @@ public class BallController : MonoBehaviour
         Vector3 endPosition = new Vector3(0f, -0.8f, 0f);
         float jumpHeight = 1f;
         float jumpDuration = 0.5f;
-        int jumpCount = 3;
+        int jumpCount = 2;
 
         for (int i = 0; i < jumpCount; i++)
         {
