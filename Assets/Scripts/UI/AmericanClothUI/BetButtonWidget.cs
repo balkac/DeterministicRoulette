@@ -77,7 +77,7 @@ public class BetButtonWidget : ButtonWidgetBase
         RectTransform rectTransform = chipWidget.GetComponent<RectTransform>();
         rectTransform.localPosition = Vector3.zero + new Vector3(0f, 5f * (_placedChips.Count), 0f);
         rectTransform.localRotation = Quaternion.identity;
-        rectTransform.localScale = Vector3.one * 0.5f;
+        rectTransform.localScale = Vector3.one * 0.45f;
 
         chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
     }
