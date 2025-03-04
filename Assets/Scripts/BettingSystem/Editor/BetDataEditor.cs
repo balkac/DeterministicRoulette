@@ -49,15 +49,15 @@ public class BetDataEditor : EditorWindow
                 int[][] betCombinations = GetCombinationsForBet(betType);
                 foreach (var numbers in betCombinations)
                 {
-                    BetCondition condition = GetOrCreateCondition(betType, numbers);
-                    CreateBetData(betType, numbers, condition, betTypeFolderPath);
+                    BetCondition_NumberExists conditionNumberExists = GetOrCreateCondition(betType, numbers);
+                    CreateBetData(betType, numbers, conditionNumberExists, betTypeFolderPath);
                 }
             }
             else
             {
                 int[] numbers = GetNumbersForBet(betType);
-                BetCondition condition = GetOrCreateCondition(betType, numbers);
-                CreateBetData(betType, numbers, condition, betTypeFolderPath);
+                BetCondition_NumberExists conditionNumberExists = GetOrCreateCondition(betType, numbers);
+                CreateBetData(betType, numbers, conditionNumberExists, betTypeFolderPath);
             }
         }
     }
@@ -68,7 +68,7 @@ public class BetDataEditor : EditorWindow
                betType == BetType.Corner || betType == BetType.SixLine;
     }
 
-    private static void CreateBetData(BetType betType, int[] numbers, BetCondition condition, string folderPath)
+    private static void CreateBetData(BetType betType, int[] numbers, BetCondition_NumberExists conditionNumberExists, string folderPath)
     {
         string assetPath;
         if (IsInsideBet(betType))
@@ -90,7 +90,7 @@ public class BetDataEditor : EditorWindow
         betData.BetType = betType;
         betData.PayoutMultiplier = GetPayoutMultiplier(betType);
         betData.Numbers = numbers;
-        betData.Condition = condition;
+        betData.BetCondition = conditionNumberExists;
 
         EditorUtility.SetDirty(betData);
         AssetDatabase.CreateAsset(betData, assetPath);
@@ -98,25 +98,24 @@ public class BetDataEditor : EditorWindow
         Debug.Log($"Created BetData for {betType} {string.Join(",", numbers)}");
     }
 
-    private static BetCondition GetOrCreateCondition(BetType betType, int[] numbers)
+    private static BetCondition_NumberExists GetOrCreateCondition(BetType betType, int[] numbers)
     {
         string conditionPath =
-            Path.Combine(ConditionFolderPath, $"BetCondition_{betType}.asset");
-        BetCondition condition = AssetDatabase.LoadAssetAtPath<BetCondition>(conditionPath);
+            Path.Combine(ConditionFolderPath, $"BetCondition_NumberExists.asset");
+        BetCondition_NumberExists conditionNumberExists = AssetDatabase.LoadAssetAtPath<BetCondition_NumberExists>(conditionPath);
 
-        if (condition != null)
+        if (conditionNumberExists != null)
         {
-            return condition;
+            return conditionNumberExists;
         }
 
-        condition = ScriptableObject.CreateInstance<BetCondition>();
-        condition.BetType = betType;
+        conditionNumberExists = ScriptableObject.CreateInstance<BetCondition_NumberExists>();
 
-        AssetDatabase.CreateAsset(condition, conditionPath);
+        AssetDatabase.CreateAsset(conditionNumberExists, conditionPath);
         AssetDatabase.SaveAssets();
         Debug.Log($"Created Condition for {betType} {string.Join(",", numbers)}");
 
-        return condition;
+        return conditionNumberExists;
     }
 
     private static float GetPayoutMultiplier(BetType betType)

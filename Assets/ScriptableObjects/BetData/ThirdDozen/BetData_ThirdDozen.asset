@@ -15,4 +15,4 @@ MonoBehaviour:
   BetType: 13
   Numbers: 190000001a0000001b0000001c0000001d0000001e0000001f0000002000000021000000220000002300000024000000
   PayoutMultiplier: 2
-  Condition: {fileID: 11400000, guid: c2f919fd81eaa49dcb1d4173888c751d, type: 2}
+  BetCondition: {fileID: 11400000, guid: 9bfa4f6bd2f544f77983dc6798d5ef08, type: 2}

@@ -15,4 +15,4 @@ MonoBehaviour:
   BetType: 0
   Numbers: 07000000
   PayoutMultiplier: 35
-  Condition: {fileID: 11400000, guid: 00f116e448a9840a4b15cb7b126d5fe5, type: 2}
+  BetCondition: {fileID: 11400000, guid: 9bfa4f6bd2f544f77983dc6798d5ef08, type: 2}
