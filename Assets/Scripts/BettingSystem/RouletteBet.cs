@@ -4,8 +4,8 @@ public class RouletteBet : Bet
 
     public override float ResolveBet(int winningNumber)
     {
-        return BetInfo.Condition.Evaluate(winningNumber,BetInfo.Numbers) 
-            ? Amount * BetInfo.PayoutMultiplier 
+        return BetInfo.BetCondition.Evaluate(winningNumber,BetInfo.Numbers) 
+            ? Amount + Amount * BetInfo.PayoutMultiplier 
             : 0;
     }
 }

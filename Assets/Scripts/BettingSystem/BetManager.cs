@@ -24,7 +24,7 @@ public class BetManager : Singleton<BetManager>
         ChipManager.Instance.PlaceBet(betData, chip);
         Debug.Log(
             $"[BetManager] Bet placed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Amount: {chip.Value}");
-        
+
         OnBetAmountChanged?.Invoke(GetTotalBetAmount());
     }
 
@@ -69,11 +69,16 @@ public class BetManager : Singleton<BetManager>
             .ToList() ?? new List<BetData>();
     }
 
-    public List<BetData> GetAllBets()
+    public List<BetData> GetAllBetData()
     {
         return _betTypeLists.SelectMany(betTypeList => betTypeList.Bets).ToList();
     }
-    
+
+    public List<RouletteBet> GetAllPlacedBets()
+    {
+        return _placedBets;
+    }
+
     public int GetTotalBetAmount()
     {
         return _placedBets.Sum(bet => bet.Amount);

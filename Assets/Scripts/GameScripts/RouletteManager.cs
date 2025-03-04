@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -79,6 +81,28 @@ public class RouletteManager : MonoBehaviour
     {
         OnSpinCompleted?.Invoke();
         OnSpinDataReceived?.Invoke(_resultData);
+        ResolveBets(_resultData.Number);
+    }
+
+    private void ResolveBets(int winningNumber)
+    {
+        List<RouletteBet> bets = BetManager.Instance.GetAllPlacedBets();
+
+        int totalPayout = 0;
+
+        foreach (var bet in bets)
+        {
+            int payout = (int)bet.ResolveBet(winningNumber);
+            if (payout > 0)
+            {
+                Debug.Log(
+                    $"[RouletteManager] Bet WON: {bet.BetInfo.BetType} - Winning Number: {winningNumber} - Payout: {payout}");
+            }
+
+            totalPayout += payout;
+        }
+
+        Debug.Log("[RouletteManager] Total Payout: " + totalPayout);
     }
 
     private void SetPredeterminedNumber(int number)

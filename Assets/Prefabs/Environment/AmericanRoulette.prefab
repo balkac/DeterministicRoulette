@@ -9131,6 +9131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotatePoint: {fileID: 8640850899913581080}
   _axis: {x: 0, y: -1, z: 0}
-  _minAngularSpeed: 80
+  _minAngularSpeed: 60
   _maxAngularSpeed: 300
   _minSpinDuration: 5
