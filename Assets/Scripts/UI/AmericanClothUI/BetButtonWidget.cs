@@ -11,8 +11,9 @@ public class BetButtonWidget : ButtonWidgetBase
     [SerializeField] protected Button _button;
     [SerializeField] protected List<int> Numbers;
 
+    protected bool _canSelect = true;
     private List<ChipWidget> _placedChips = new List<ChipWidget>();
-
+    
     protected override void AwakeCustomActions()
     {
         base.AwakeCustomActions();
@@ -26,6 +27,11 @@ public class BetButtonWidget : ButtonWidgetBase
 
     private void OnButtonClick()
     {
+        if (!_canSelect)
+        {
+            return;
+        }
+        
         if (ChipManager.Instance.GetSelectedChip() != null)
         {
             PlaceBet();

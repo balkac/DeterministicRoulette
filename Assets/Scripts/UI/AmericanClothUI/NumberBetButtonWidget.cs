@@ -101,6 +101,7 @@ public class NumberBetButtonWidget : BetButtonWidget
     public override void OnPointerDown(PointerEventData eventData)
     {
         _isPointerDown = true;
+        _canSelect = false;
         _holdCoroutine = StartCoroutine(PressDurationCoroutine());
     }
 
@@ -110,6 +111,7 @@ public class NumberBetButtonWidget : BetButtonWidget
         if (_holdCoroutine != null)
         {
             StopCoroutine(_holdCoroutine);
+            _canSelect = true;
         }
 
         if (!_isSelectedAsPredetermined)
@@ -136,6 +138,8 @@ public class NumberBetButtonWidget : BetButtonWidget
                 _isSelectedAsPredetermined = true;
             }
         }
+
+        _holdCoroutine = null;
     }
 
     public void TryDeselect()

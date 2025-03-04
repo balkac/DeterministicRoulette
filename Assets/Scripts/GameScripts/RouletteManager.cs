@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,12 +13,14 @@ public class RouletteManager : MonoBehaviour
     [Tooltip("-2 means random")] [SerializeField]
     private int _predeterminedNumber = -2;
 
+    private WheelNumberData _resultData;
+    private int _numberOfSpins;
+
     public Action OnSpinStarted;
     public Action OnSpinCompleted;
-    public Action<WheelNumberData> OnSpinDataReceived;
-
-    private WheelNumberData _resultData;
-
+    public Action<WheelNumberData, bool, int> OnSpinDataReceived;
+    public Action<int> OnRouletteWon;
+    private int _lastTotalPayout;
     private void Awake()
     {
         _americanClothUI.OnNumberSelected += OnNumberSelected;
@@ -79,16 +80,25 @@ public class RouletteManager : MonoBehaviour
 
     private void OnBallSpinComplete()
     {
+        _numberOfSpins++;
+
         OnSpinCompleted?.Invoke();
-        OnSpinDataReceived?.Invoke(_resultData);
-        ResolveBets(_resultData.Number);
+
+        bool isWin = ResolveBets(_resultData.Number);
+
+        OnSpinDataReceived?.Invoke(_resultData, isWin, _numberOfSpins);
+
+        if (isWin)
+        {
+            OnRouletteWon?.Invoke(_lastTotalPayout);
+        }
     }
 
-    private void ResolveBets(int winningNumber)
+    private bool ResolveBets(int winningNumber)
     {
         List<RouletteBet> bets = BetManager.Instance.GetAllPlacedBets();
 
-        int totalPayout = 0;
+        _lastTotalPayout = 0;
 
         foreach (var bet in bets)
         {
@@ -99,10 +109,12 @@ public class RouletteManager : MonoBehaviour
                     $"[RouletteManager] Bet WON: {bet.BetInfo.BetType} - Winning Number: {winningNumber} - Payout: {payout}");
             }
 
-            totalPayout += payout;
+            _lastTotalPayout += payout;
         }
 
-        Debug.Log("[RouletteManager] Total Payout: " + totalPayout);
+        Debug.Log("[RouletteManager] Total Payout: " + _lastTotalPayout);
+
+        return _lastTotalPayout > 0;
     }
 
     private void SetPredeterminedNumber(int number)

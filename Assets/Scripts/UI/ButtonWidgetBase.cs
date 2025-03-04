@@ -12,7 +12,7 @@ public abstract class ButtonWidgetBase : MonoBehaviour, IPointerDownHandler, IPo
 
     private Vector3 _initialScale;
     protected bool _isPointerDown = false;
-
+    
     protected virtual void Awake()
     {
         _initialScale = transform.localScale;

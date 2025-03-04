@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,17 +15,34 @@ public class LastNumberTextWidget : PoolObject
 
     [SerializeField] private Image _containerImage;
     [SerializeField] private TextMeshProUGUI _numberText;
-
+    [SerializeField] private TextMeshProUGUI _winLoseText;
     public ENumberType NumberType { get; set; }
     public string Number { get; set; }
 
-    public void Initialize(int number, ENumberType numberType)
+    private void Awake()
     {
+        _winLoseText.enabled = false;
+    }
+
+    public void Initialize(int number, ENumberType numberType, bool isWin = false, bool canShownWinLose = false)
+    {
+        if (canShownWinLose)
+        {
+            _winLoseText.enabled = true;
+            _winLoseText.text = isWin ? "W" : "L";
+        }
+
         Number = number == -1 ? "00" : number.ToString();
         NumberType = numberType;
         UpdateImageColor();
         UpdateText();
         UpdateTextMaterial();
+    }
+
+    protected override void DeactivateCustomActions()
+    {
+        base.DeactivateCustomActions();
+        _winLoseText.enabled = false;
     }
 
     private void UpdateImageColor()
