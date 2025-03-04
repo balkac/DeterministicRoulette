@@ -49,6 +49,11 @@ public class ChipWidget : PoolObject
         _chipButton.onClick.RemoveListener(OnChipButtonClicked);
     }
 
+    public int GetChipValue()
+    {
+        return _chipValue;
+    }
+
     private void UpdateChipText()
     {
         if (_chipText != null)

@@ -9,8 +9,9 @@ public class BallController : MonoBehaviour
     [SerializeField] private float _minAngularSpeed = 60f;
     [SerializeField] private float _maxAngularSpeed = 240f;
     [SerializeField] private float _minSpinDuration = 5f;
-
-    private float _distanceThreshold = 0.15f;
+    [SerializeField] private float _moveSpeedToRotatePoint = 1f;
+    private float _moveSpeedMultiplier = 0.01f;
+    private float _distanceThreshold = 0.1f;
     private bool _spinning = false;
     private Coroutine _spinCoroutine;
     private Transform _initialParent;
@@ -31,6 +32,10 @@ public class BallController : MonoBehaviour
         if (_spinning)
         {
             transform.RotateAround(_rotatePoint.position, _axis, _angularSpeed * Time.deltaTime);
+
+            float moveSpeed = _moveSpeedMultiplier * _moveSpeedToRotatePoint;
+            transform.position =
+                Vector3.MoveTowards(transform.position, _rotatePoint.position, moveSpeed * Time.deltaTime);
         }
     }
 
@@ -57,9 +62,6 @@ public class BallController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             _angularSpeed = Mathf.Lerp(_maxAngularSpeed, _minAngularSpeed, elapsedTime / _minSpinDuration);
             yield return null;
-
-            // Check angle condition
-            // float angle = Vector3.Angle(transform.forward, resultData.NumberTransform.forward);
         }
 
         elapsedTime = 0f;
@@ -68,12 +70,10 @@ public class BallController : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
 
-            // Check distance condition
             float distance = Vector3.Distance(transform.position, resultData.NumberTransform.position);
             Debug.Log($"Distance to target: {distance}");
 
             // Normalize distance to control angular speed smoothly
-
             if (distance - _distanceThreshold > _distanceThreshold)
             {
                 yield return null;
@@ -122,11 +122,13 @@ public class BallController : MonoBehaviour
             transform.localPosition = endPosition;
             startPosition = endPosition;
             endPosition = new Vector3(0f, -0.8f, 0f); // Reset end position for the next jump
+            jumpHeight *= 0.8f;
         }
 
+        jumpHeight = 0.5f;
         // Move to final position with jumps
         Vector3 finalPosition = new Vector3(0f, -0.8f, 0f);
-        float moveDuration = 1f;
+        float moveDuration = 0.5f;
         float moveElapsedTime = 0f;
 
         while (moveElapsedTime < moveDuration)

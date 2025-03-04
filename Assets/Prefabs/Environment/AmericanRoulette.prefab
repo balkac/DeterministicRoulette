@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505116dffb9164d13bfcf31ce48af03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spinSpeed: 20
+  _spinSpeed: 40
   WheelNumberDataList:
   - Number: 0
     NumberType: 2
@@ -9134,3 +9134,4 @@ MonoBehaviour:
   _minAngularSpeed: 60
   _maxAngularSpeed: 300
   _minSpinDuration: 5
+  _moveSpeedToRotatePoint: 1

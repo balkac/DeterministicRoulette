@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,14 +11,16 @@ public class BetButtonWidget : ButtonWidgetBase
     [SerializeField] protected Transform _chipWidgetsParent;
     [SerializeField] protected Button _button;
     [SerializeField] protected List<int> Numbers;
+    [SerializeField] protected TextMeshProUGUI _chipValueText;
 
     protected bool _canSelect = true;
     private List<ChipWidget> _placedChips = new List<ChipWidget>();
-    
+
     protected override void AwakeCustomActions()
     {
         base.AwakeCustomActions();
         _button.onClick.AddListener(OnButtonClick);
+        UpdateChipValueText();
     }
 
     private void OnDestroy()
@@ -31,7 +34,7 @@ public class BetButtonWidget : ButtonWidgetBase
         {
             return;
         }
-        
+
         if (ChipManager.Instance.GetSelectedChip() != null)
         {
             PlaceBet();
@@ -42,6 +45,8 @@ public class BetButtonWidget : ButtonWidgetBase
             RemoveLastBetByType();
             RemoveChipImage();
         }
+
+        UpdateChipValueText();
     }
 
     public List<int> GetNumbers()
@@ -69,6 +74,15 @@ public class BetButtonWidget : ButtonWidgetBase
         BetManager.Instance.TryRemoveLastBetByType(_betType, GetNumbers());
     }
 
+    private void UpdateChipValueText()
+    {
+        if (_chipValueText == null)
+        {
+            return;
+        }
+
+        _chipValueText.text = _placedChips.Count > 0 ? _placedChips.Sum(chip => chip.GetChipValue()).ToString() : "0";
+    }
 
     private void PlaceChipImage()
     {
