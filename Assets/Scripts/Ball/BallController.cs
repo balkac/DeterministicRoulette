@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class BallController : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class BallController : MonoBehaviour
     [SerializeField] private Vector3 _axis = Vector3.up;
     [SerializeField] private float _minAngularSpeed = 60f;
     [SerializeField] private float _maxAngularSpeed = 240f;
-    [SerializeField] private float _minSpinDuration = 5f;
+    [SerializeField] private float _minSpinDuration = 4f;
+    [SerializeField] private float _maxSpinDuration = 10f;
     [SerializeField] private float _moveSpeedToRotatePoint = 1f;
     private float _moveSpeedMultiplier = 0.01f;
     private float _distanceThreshold = 0.1f;
@@ -55,9 +57,11 @@ public class BallController : MonoBehaviour
 
     private IEnumerator SpinAndStop(WheelNumberData resultData)
     {
+        float spinDuration = Random.Range(_minSpinDuration, _maxSpinDuration);
+
         float elapsedTime = 0f;
 
-        while (elapsedTime < _minSpinDuration)
+        while (elapsedTime < spinDuration / 2)
         {
             elapsedTime += Time.deltaTime;
             _angularSpeed = Mathf.Lerp(_maxAngularSpeed, _minAngularSpeed, elapsedTime / _minSpinDuration);
@@ -66,7 +70,7 @@ public class BallController : MonoBehaviour
 
         elapsedTime = 0f;
 
-        while (elapsedTime < _minSpinDuration)
+        while (elapsedTime < spinDuration / 2)
         {
             elapsedTime += Time.deltaTime;
 
