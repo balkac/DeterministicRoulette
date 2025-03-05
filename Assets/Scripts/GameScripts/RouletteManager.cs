@@ -26,7 +26,7 @@ public class RouletteManager : MonoBehaviour
     {
         _americanClothUI.OnNumberSelected += OnNumberSelected;
         _americanClothUI.OnNumberDeselected += OnNumberDeselected;
-        _spinButtonWidget.OnSpinButtonPressed += OnSpinButtonPressed;
+        _spinButtonWidget.OnButtonClicked += OnSpinButtonPressed;
     }
 
     private void OnNumberDeselected()
@@ -43,7 +43,7 @@ public class RouletteManager : MonoBehaviour
     {
         _americanClothUI.OnNumberSelected -= OnNumberSelected;
         _americanClothUI.OnNumberDeselected -= OnNumberDeselected;
-        _spinButtonWidget.OnSpinButtonPressed -= OnSpinButtonPressed;
+        _spinButtonWidget.OnButtonClicked -= OnSpinButtonPressed;
         _ballController.OnBallSpinCompleted -= OnSpinCompleted;
     }
 

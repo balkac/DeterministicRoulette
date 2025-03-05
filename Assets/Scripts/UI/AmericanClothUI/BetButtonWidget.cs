@@ -23,8 +23,10 @@ public class BetButtonWidget : ButtonWidgetBase
         UpdateChipValueText();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroyCustomActions()
     {
+        base.OnDestroyCustomActions();
+
         _button.onClick.RemoveListener(OnButtonClick);
     }
 

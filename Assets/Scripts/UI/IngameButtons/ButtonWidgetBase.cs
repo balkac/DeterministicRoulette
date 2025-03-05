@@ -23,6 +23,14 @@ public abstract class ButtonWidgetBase : MonoBehaviour, IPointerDownHandler, IPo
     {
     }
 
+    protected virtual void OnDestroy()
+    {
+        OnDestroyCustomActions();
+    }
+    
+    protected virtual void OnDestroyCustomActions()
+    {
+    }
     protected virtual void Update()
     {
         if (!_canAnimate)
