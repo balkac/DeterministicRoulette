@@ -4,6 +4,9 @@
 
 This repository contains a fully structured Roulette game implemented in Unity. It includes betting mechanics, chip management, and a Bet Data Editor to automate bet configurations.
 
+## Gameplay Demo
+[![Roulette Gameplay](https://img.youtube.com/vi/NXZRyQRY2eU/0.jpg)](https://www.youtube.com/watch?v=NXZRyQRY2eU)
+
 ---
 ## 2. Features
 
