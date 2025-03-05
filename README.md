@@ -4,6 +4,7 @@
 
 This repository contains a fully structured Roulette game implemented in Unity. It includes betting mechanics, chip management, and a Bet Data Editor to automate bet configurations.
 
+---
 ## 2. Features
 
 - Betting System: Supports Inside and Outside Bets.
@@ -12,6 +13,8 @@ This repository contains a fully structured Roulette game implemented in Unity. 
 - Optimized Gameplay: Efficient bet evaluations and structured data storage.
 - Pre-determined Winning Number Selection: Players can select the next winning number by long pressing on the roulette UI.
 - Object-Oriented Programming (OOP) Design: Implements best practices including Encapsulation, Inheritance, Polymorphism, and SOLID Principles.
+- Bet Undo & Clear Buttons: Players can undo the last placed bet or clear all placed bets. These buttons are located next to the Spin button in the bottom-right corner of the UI.
+- Stack-based Bet Removal: If no chip is selected, tapping the stacked chips removes the most recently placed bet.
 
 ---
 ## 3. Betting System
@@ -49,6 +52,7 @@ In the roulette table UI, players can long-press on a number to pre-select it as
 - Five Chip Denominations: 1, 5, 10, 50, 100
 - Chip UI Interaction: Players can select a chip and place bets.
 - Bet Validation: Ensures proper bet placement and calculation.
+- Stacked Chip Removal: If no chip is selected, tapping the stacked chips removes the last placed bet.
 
 ---
 ## 6. OOP Principles in Roulette Betting System 🎯
@@ -87,7 +91,7 @@ public abstract class Bet
 ```csharp
 public interface IBetCondition
 {
-    bool Evaluate(int winningNumber);
+    bool Evaluate(int winningNumber, int[] numbers);
 }
 ```
 
@@ -158,7 +162,12 @@ Click "Generate Bet Data", and the tool will:
 ---
 ## 10. Future Improvements
 
-(TBD)
+- **Persistent Data System:** Currently, the game starts with a fixed amount of 1000 chips. This value can be adjusted in the Unity Inspector under `ChipManager -> Starting Chip Count`.
+- **Auto-Save Feature:** The game does not yet persist data across sessions, but an auto-save feature can be implemented to store:
+  - Active bets
+  - Total chips
+  - Last spin outcome
+  - Other game state variables
 
 ---
 ## 11. License
@@ -166,4 +175,3 @@ Click "Generate Bet Data", and the tool will:
 MIT License - Free to use and modify.
 
 End of Document
-
