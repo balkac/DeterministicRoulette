@@ -51,6 +51,7 @@ public class BetButtonWidget : ButtonWidgetBase
     protected virtual void OnAllBetsClearedCustomActions()
     {
     }
+
     private void OnBetUpdated(RouletteBet rouletteBet)
     {
         if (rouletteBet.BetInfo.BetType == _betType)
@@ -79,13 +80,17 @@ public class BetButtonWidget : ButtonWidgetBase
 
         if (ChipManager.Instance.GetSelectedChip() != null)
         {
+            SoundManager.Instance.PlayChipSound();
             PlaceBet();
             PlaceChipImage();
         }
         else
         {
-            RemoveLastBetByType();
-            RemoveChipImage();
+            if (TryRemoveLastBetByType())
+            {
+                SoundManager.Instance.PlayChipSound();
+                RemoveChipImage();
+            }
         }
 
         UpdateChipValueText();
@@ -111,9 +116,14 @@ public class BetButtonWidget : ButtonWidgetBase
         BetManager.Instance.PlaceBetByType(_betType, GetNumbers());
     }
 
-    private void RemoveLastBetByType()
+    private bool TryRemoveLastBetByType()
     {
-        BetManager.Instance.TryRemoveLastBetByType(_betType, GetNumbers());
+        if (BetManager.Instance.TryRemoveLastBetByType(_betType, GetNumbers()))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void UpdateChipValueText()
@@ -129,7 +139,7 @@ public class BetButtonWidget : ButtonWidgetBase
     private void UpdateChipImages(RouletteBet rouletteBet)
     {
         int placedChipValue = _placedChips.Sum(chip => chip.GetChipValue());
-        int newTotalBetAmount = ChipManager.Instance.GetTotalBetAmount(rouletteBet.BetInfo);
+        int newTotalBetAmount = ChipManager.Instance.GetBetAmount(rouletteBet.BetInfo);
 
         if (newTotalBetAmount > placedChipValue)
         {

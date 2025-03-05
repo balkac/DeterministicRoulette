@@ -31,6 +31,8 @@ public class WinUI : MonoBehaviour
 
     public void Activate()
     {
+        SoundManager.Instance.PlayWinSound();
+
         StartCoroutine(FadeCanvasGroup(_canvasGroup, _canvasGroup.alpha, 1, _animationDuration, () =>
         {
             _canvasGroup.interactable = true;

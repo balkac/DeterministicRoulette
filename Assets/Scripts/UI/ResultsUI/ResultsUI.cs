@@ -8,6 +8,7 @@ public class ResulsUI : MonoBehaviour
     [SerializeField] private Transform _lastNumberTextWidgetParent;
     [SerializeField] private Transform _scrollContent;
     [SerializeField] private TextMeshProUGUI _spinCountText;
+    [SerializeField] private ParticleSystem _rotateParticle;
 
     private LastNumberTextWidget _lastNumberTextWidget = null;
 
@@ -32,6 +33,11 @@ public class ResulsUI : MonoBehaviour
         }
 
         GameObject lastNumberTextWidgetGo = PoolManager.Instance.GetObjectFromPool<LastNumberTextWidget>();
+
+        if (!_rotateParticle.isPlaying)
+        {
+            _rotateParticle.Play();
+        }
 
         lastNumberTextWidgetGo.transform.SetParent(_lastNumberTextWidgetParent);
 

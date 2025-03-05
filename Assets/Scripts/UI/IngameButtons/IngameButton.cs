@@ -32,6 +32,7 @@ public class IngameButton : ButtonWidgetBase
 
     protected virtual void OnButtonClickCustomActions()
     {
+        SoundManager.Instance.PlayButtonClickSound();
     }
 
     protected void Activate()

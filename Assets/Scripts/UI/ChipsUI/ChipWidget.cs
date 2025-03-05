@@ -69,6 +69,8 @@ public class ChipWidget : PoolObject
 
     private void OnChipButtonClicked()
     {
+        SoundManager.Instance.PlayButtonClickSound();
+
         if (_isSelected)
         {
             DeselectChip();

@@ -49,6 +49,14 @@ public class RouletteManager : MonoBehaviour
 
     private void OnSpinButtonPressed()
     {
+        if (ChipManager.Instance.GetTotalBetAmount() == 0)
+        {
+            TextFeedbackManager.Instance.ShowText("Please Put Some Bet !",
+                new Vector2(0, 0));
+
+            return;
+        }
+
         SpinRoulette();
     }
 

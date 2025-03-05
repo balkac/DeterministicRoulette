@@ -61,7 +61,7 @@ public class BetManager : Singleton<BetManager>
                 }
 
                 Debug.Log(
-                    $"[BetManager] Removed last placed chip from {betType} Bet: {lastBet.BetType} - Remaining Total Bet: {ChipManager.Instance.GetTotalBetAmount(lastBet)}");
+                    $"[BetManager] Removed last placed chip from {betType} Bet: {lastBet.BetType} - Remaining Total Bet: {ChipManager.Instance.GetBetAmount(lastBet)}");
                 OnBetAmountChanged?.Invoke(GetTotalBetAmount());
                 return true;
             }

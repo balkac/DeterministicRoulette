@@ -43,6 +43,8 @@ public class BallController : MonoBehaviour
 
     public void StartSpin(WheelNumberData resultData)
     {
+        SoundManager.Instance.PlayWheelSound();
+
         transform.SetParent(_initialParent);
         transform.localPosition = _initialLocalPosition;
         if (_spinCoroutine != null)
@@ -110,6 +112,8 @@ public class BallController : MonoBehaviour
         float jumpDuration = 0.5f;
         int jumpCount = 2;
 
+        SoundManager.Instance.PlayBallHitSound();
+
         for (int i = 0; i < jumpCount; i++)
         {
             float jumpElapsedTime = 0f;
@@ -127,6 +131,8 @@ public class BallController : MonoBehaviour
             startPosition = endPosition;
             endPosition = new Vector3(0f, -0.8f, 0f); // Reset end position for the next jump
             jumpHeight *= 0.8f;
+
+            SoundManager.Instance.PlayBallHitSound();
         }
 
         jumpHeight = 0.5f;
@@ -134,6 +140,7 @@ public class BallController : MonoBehaviour
         Vector3 finalPosition = new Vector3(0f, -0.8f, 0f);
         float moveDuration = 0.5f;
         float moveElapsedTime = 0f;
+
 
         while (moveElapsedTime < moveDuration)
         {
@@ -144,6 +151,7 @@ public class BallController : MonoBehaviour
             yield return null;
         }
 
+        SoundManager.Instance.PlayBallHitSound();
         transform.localPosition = finalPosition;
         OnBallSpinCompleted?.Invoke();
     }
