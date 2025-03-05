@@ -60,14 +60,6 @@ public class RouletteManager : MonoBehaviour
         SpinRoulette();
     }
 
-    private void Update()
-    {
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     SpinRoulette();
-        // }
-    }
-
     public int GetLastTotalPayout()
     {
         return _lastTotalPayout;
@@ -119,14 +111,14 @@ public class RouletteManager : MonoBehaviour
             int payout = (int)bet.ResolveBet(winningNumber);
             if (payout > 0)
             {
-                Debug.Log(
-                    $"[RouletteManager] Bet WON: {bet.BetInfo.BetType} - Winning Number: {winningNumber} - Payout: {payout}");
+                // Debug.Log(
+                // $"[RouletteManager] Bet WON: {bet.BetInfo.BetType} - Winning Number: {winningNumber} - Payout: {payout}");
             }
 
             _lastTotalPayout += payout;
         }
 
-        Debug.Log("[RouletteManager] Total Payout: " + _lastTotalPayout);
+        // Debug.Log("[RouletteManager] Total Payout: " + _lastTotalPayout);
 
         return _lastTotalPayout > 0;
     }

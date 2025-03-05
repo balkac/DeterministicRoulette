@@ -29,8 +29,8 @@ public class BetManager : Singleton<BetManager>
         ChipManager.Instance.PlaceBet(betData, chip);
         _betHistory.Push(bet);
         _betActions.Push(true);
-        Debug.Log(
-            $"[BetManager] Bet placed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Amount: {chip.Value}");
+        // Debug.Log(
+        //     $"[BetManager] Bet placed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Amount: {chip.Value}");
 
         OnBetAmountChanged?.Invoke(GetTotalBetAmount());
     }
@@ -60,8 +60,8 @@ public class BetManager : Singleton<BetManager>
                     _betActions.Push(false);
                 }
 
-                Debug.Log(
-                    $"[BetManager] Removed last placed chip from {betType} Bet: {lastBet.BetType} - Remaining Total Bet: {ChipManager.Instance.GetBetAmount(lastBet)}");
+                // Debug.Log(
+                //     $"[BetManager] Removed last placed chip from {betType} Bet: {lastBet.BetType} - Remaining Total Bet: {ChipManager.Instance.GetBetAmount(lastBet)}");
                 OnBetAmountChanged?.Invoke(GetTotalBetAmount());
                 return true;
             }
@@ -82,13 +82,13 @@ public class BetManager : Singleton<BetManager>
         {
             _placedBets.Remove(lastBet);
             ChipManager.Instance.TryRemoveLastPlacedChip(lastBet.BetInfo);
-            Debug.Log($"[BetManager] Undo: Removed last placed bet: {lastBet.BetInfo.BetType}");
+            // Debug.Log($"[BetManager] Undo: Removed last placed bet: {lastBet.BetInfo.BetType}");
         }
         else // If last action was removing a bet, re-add it
         {
             _placedBets.Add(lastBet);
             ChipManager.Instance.PlaceBet(lastBet.BetInfo, new Chip(lastBet.Amount));
-            Debug.Log($"[BetManager] Undo: Restored last removed bet: {lastBet.BetInfo.BetType}");
+            // Debug.Log($"[BetManager] Undo: Restored last removed bet: {lastBet.BetInfo.BetType}");
         }
 
         OnBetUpdated?.Invoke(lastBet);
@@ -103,7 +103,7 @@ public class BetManager : Singleton<BetManager>
         ChipManager.Instance.ClearAllBets();
         OnAllBetsCleared?.Invoke();
         OnBetAmountChanged?.Invoke(0);
-        Debug.Log("[BetManager] All bets cleared.");
+        // Debug.Log("[BetManager] All bets cleared.");
     }
 
     public List<RouletteBet> GetAllPlacedBets()
