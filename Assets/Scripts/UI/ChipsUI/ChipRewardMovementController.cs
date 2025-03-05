@@ -9,11 +9,12 @@ public class ChipRewardMovementController : MonoBehaviour
     [SerializeField] private RectTransform _spawnPosition;
     [SerializeField] private RectTransform _destinationPosition;
     [SerializeField] private int _chipCount = 10;
-    [SerializeField] private float _spawnRadius = 50f;
+    [SerializeField] private float _spawnRadius = 0.05f;
     [SerializeField] private float _movementDuration = 1.5f;
     [SerializeField] private float _preMoveDelay = 1f;
     [SerializeField] private AnimationCurve _movementCurve;
     [SerializeField] private RouletteManager _rouletteManager;
+    [SerializeField] private Camera _uiCamera;
     private WaitForSeconds _preMoveDelayWait;
     public Action OnChipMovementCompleted;
 
@@ -56,7 +57,7 @@ public class ChipRewardMovementController : MonoBehaviour
         for (int i = 0; i < _chipCount; i++)
         {
             GameObject chip = PoolManager.Instance.GetObjectFromPool<ChipReward>();
-            chip.transform.SetParent(_chipParent);
+            chip.transform.SetParent(_chipParent, false);
 
             RectTransform chipTransform = chip.GetComponent<RectTransform>();
             chipTransform.localPosition = Vector3.zero;
@@ -68,7 +69,7 @@ public class ChipRewardMovementController : MonoBehaviour
                 Random.Range(-_spawnRadius, _spawnRadius)
             );
 
-            chipTransform.position = _spawnPosition.position + (Vector3)randomOffset;
+            chipTransform.localPosition = ConvertWorldToLocal(_spawnPosition.position + (Vector3)randomOffset);
             spawnedChips[i] = chip;
 
             StartCoroutine(ApplyPunchEffect(chipTransform));
@@ -101,10 +102,22 @@ public class ChipRewardMovementController : MonoBehaviour
         chipTransform.localScale = targetScale;
     }
 
+    private Vector2 ConvertWorldToLocal(Vector3 worldPosition)
+    {
+        if (_uiCamera == null || _chipParent == null)
+            return Vector2.zero;
+
+        Vector2 screenPosition = RectTransformUtility.WorldToScreenPoint(_uiCamera, worldPosition);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            _chipParent, screenPosition, _uiCamera, out Vector2 localPosition);
+
+        return localPosition;
+    }
+
     private IEnumerator AnimateChipMovement(RectTransform chipTransform)
     {
-        Vector3 startPosition = chipTransform.position;
-        Vector3 endPosition = _destinationPosition.position;
+        Vector2 startPosition = chipTransform.localPosition;
+        Vector2 endPosition = ConvertWorldToLocal(_destinationPosition.position);
         float elapsedTime = 0f;
 
         while (elapsedTime < _movementDuration)
@@ -113,11 +126,11 @@ public class ChipRewardMovementController : MonoBehaviour
             float progress = elapsedTime / _movementDuration;
             progress = _movementCurve.Evaluate(progress);
 
-            chipTransform.position = Vector3.Lerp(startPosition, endPosition, progress);
+            chipTransform.localPosition = Vector2.Lerp(startPosition, endPosition, progress);
             yield return null;
         }
 
-        chipTransform.position = endPosition;
+        chipTransform.localPosition = endPosition;
         chipTransform.GetComponent<ChipReward>().Deactivate();
 
         _completedChips++;
