@@ -59,7 +59,40 @@ public class BetDataEditor : EditorWindow
                 BetCondition_NumberExists conditionNumberExists = GetOrCreateCondition(betType, numbers);
                 CreateBetData(betType, numbers, conditionNumberExists, betTypeFolderPath);
             }
+
+            // Hardcoded 0 and 00 bets
+            CreateHardcodedBetData(BetType.Straight, new int[] { 0 }, "Straight_0");
+            CreateHardcodedBetData(BetType.Straight, new int[] { -1 }, "Straight_00");
+            CreateHardcodedBetData(BetType.Split, new int[] { 0, -1 }, "Split_0_00");
+            CreateHardcodedBetData(BetType.Street, new int[] { 0, 1, 2 }, "Street_0_1_2");
+            CreateHardcodedBetData(BetType.Street, new int[] { -1, 2, 3 }, "Street_00_2_3");
+            CreateHardcodedBetData(BetType.Street, new int[] { 0, 2, -1 }, "Street_0_2_00");
+            CreateHardcodedBetData(BetType.SixLine, new int[] { 0, 1, 2, -1, 3 }, "SixLine_0_1_2_00_3");
         }
+    }
+
+    private static void CreateHardcodedBetData(BetType betType, int[] numbers, string assetName)
+    {
+        string folderPath = Path.Combine(FolderPath, betType.ToString());
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+
+        string assetPath = Path.Combine(folderPath, $"BetData_{assetName}.asset");
+        if (File.Exists(assetPath)) return;
+
+        BetCondition_NumberExists conditionNumberExists = GetOrCreateCondition(betType, numbers);
+        BetData betData = ScriptableObject.CreateInstance<BetData>();
+        betData.BetType = betType;
+        betData.PayoutMultiplier = GetPayoutMultiplier(betType);
+        betData.Numbers = numbers;
+        betData.BetCondition = conditionNumberExists;
+
+        EditorUtility.SetDirty(betData);
+        AssetDatabase.CreateAsset(betData, assetPath);
+        AssetDatabase.SaveAssets();
+        Debug.Log($"Created Hardcoded BetData: {assetName}");
     }
 
     private static bool IsInsideBet(BetType betType)
@@ -68,7 +101,8 @@ public class BetDataEditor : EditorWindow
                betType == BetType.Corner || betType == BetType.SixLine;
     }
 
-    private static void CreateBetData(BetType betType, int[] numbers, BetCondition_NumberExists conditionNumberExists, string folderPath)
+    private static void CreateBetData(BetType betType, int[] numbers, BetCondition_NumberExists conditionNumberExists,
+        string folderPath)
     {
         string assetPath;
         if (IsInsideBet(betType))
@@ -102,7 +136,8 @@ public class BetDataEditor : EditorWindow
     {
         string conditionPath =
             Path.Combine(ConditionFolderPath, $"BetCondition_NumberExists.asset");
-        BetCondition_NumberExists conditionNumberExists = AssetDatabase.LoadAssetAtPath<BetCondition_NumberExists>(conditionPath);
+        BetCondition_NumberExists conditionNumberExists =
+            AssetDatabase.LoadAssetAtPath<BetCondition_NumberExists>(conditionPath);
 
         if (conditionNumberExists != null)
         {
