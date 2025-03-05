@@ -17,6 +17,8 @@ public class ChipRewardMovementController : MonoBehaviour
     private WaitForSeconds _preMoveDelayWait;
     public Action OnChipMovementCompleted;
 
+    private int _completedChips = 0;
+
     private void Awake()
     {
         _preMoveDelayWait = new WaitForSeconds(_preMoveDelay);
@@ -43,6 +45,7 @@ public class ChipRewardMovementController : MonoBehaviour
 
     public void MoveChipsToDestination()
     {
+        _completedChips = 0;
         StartCoroutine(SpawnAndPrepareChips());
     }
 
@@ -115,9 +118,12 @@ public class ChipRewardMovementController : MonoBehaviour
         }
 
         chipTransform.position = endPosition;
-
         chipTransform.GetComponent<ChipReward>().Deactivate();
 
-        OnChipMovementCompleted?.Invoke();
+        _completedChips++;
+        if (_completedChips == _chipCount)
+        {
+            OnChipMovementCompleted?.Invoke();
+        }
     }
 }
