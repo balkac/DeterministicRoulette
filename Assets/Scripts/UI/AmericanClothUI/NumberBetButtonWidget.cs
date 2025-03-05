@@ -34,6 +34,13 @@ public class NumberBetButtonWidget : BetButtonWidget
         _highlightedImage.enabled = false;
     }
 
+    protected override void OnAllBetsClearedCustomActions()
+    {
+        base.OnAllBetsClearedCustomActions();
+        
+        TryDeselect();
+        OnNumberBetWidgetDeselected?.Invoke(this);
+    }
 
     private void OnValidate()
     {

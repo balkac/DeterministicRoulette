@@ -45,8 +45,12 @@ public class BetButtonWidget : ButtonWidgetBase
         _placedChips.ForEach(chip => chip.Deactivate());
         _placedChips.Clear();
         UpdateChipValueText();
+        OnAllBetsClearedCustomActions();
     }
 
+    protected virtual void OnAllBetsClearedCustomActions()
+    {
+    }
     private void OnBetUpdated(RouletteBet rouletteBet)
     {
         if (rouletteBet.BetInfo.BetType == _betType)
