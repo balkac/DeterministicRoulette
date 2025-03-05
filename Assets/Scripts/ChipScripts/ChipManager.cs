@@ -65,10 +65,10 @@ public class ChipManager : Singleton<ChipManager>
 
         _betAmounts[betData].Add(chip);
         Debug.Log(
-            $"[ChipManager] Chip placed on {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Total Bet: {GetBetAmount(betData)}");
+            $"[ChipManager] Chip placed on {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Total Bet: {GetTotalBetAmount(betData)}");
     }
 
-    public int GetBetAmount(BetData betData)
+    public int GetTotalBetAmount(BetData betData)
     {
         return _betAmounts.TryGetValue(betData, out var chips) ? chips.Sum(chip => chip.Value) : 0;
     }
@@ -79,8 +79,13 @@ public class ChipManager : Singleton<ChipManager>
         {
             _betAmounts.Remove(betData);
             Debug.Log(
-                $"[ChipManager] Bet removed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetBetAmount(betData)}");
+                $"[ChipManager] Bet removed: {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetTotalBetAmount(betData)}");
         }
+    }
+
+    public void ClearAllBets()
+    {
+        _betAmounts.Clear();
     }
 
     public bool TryRemoveLastPlacedChip(BetData betData)
@@ -90,7 +95,7 @@ public class ChipManager : Singleton<ChipManager>
             Chip removedChip = chips.Last();
             chips.RemoveAt(chips.Count - 1);
             Debug.Log(
-                $"[ChipManager] Removed last chip ({removedChip.Value}) from {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetBetAmount(betData)}");
+                $"[ChipManager] Removed last chip ({removedChip.Value}) from {betData.BetType} - Numbers: {string.Join(", ", betData.Numbers)} - Remaining Total Bet: {GetTotalBetAmount(betData)}");
             if (chips.Count == 0)
             {
                 _betAmounts.Remove(betData);

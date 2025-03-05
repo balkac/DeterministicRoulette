@@ -1,7 +1,7 @@
 public abstract class Bet
 {
     public BetData BetInfo { get; protected set; }
-    public int Amount { get; protected set; }
+    public int Amount { get; set; }
 
     protected Bet(BetData betData, int amount)
     {

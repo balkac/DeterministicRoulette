@@ -31,5 +31,7 @@ public class UndoButtonWidget : IngameButton
     protected override void OnButtonClickCustomActions()
     {
         base.OnButtonClickCustomActions();
+
+        BetManager.Instance.UndoLastAction();
     }
 }

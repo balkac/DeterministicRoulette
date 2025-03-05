@@ -75,7 +75,7 @@ public class BallController : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             float distance = Vector3.Distance(transform.position, resultData.NumberTransform.position);
-            Debug.Log($"Distance to target: {distance}");
+            // Debug.Log($"Distance to target: {distance}");
 
             // Normalize distance to control angular speed smoothly
             if (distance - _distanceThreshold > _distanceThreshold)
@@ -92,7 +92,7 @@ public class BallController : MonoBehaviour
 
             if (distance < _distanceThreshold)
             {
-                Debug.Log("Distance condition met");
+                // Debug.Log("Distance condition met");
                 break;
             }
 

@@ -16,18 +16,54 @@ public class BetButtonWidget : ButtonWidgetBase
     protected bool _canSelect = true;
     private List<ChipWidget> _placedChips = new List<ChipWidget>();
 
-    protected override void AwakeCustomActions()
+    protected override void Awake()
     {
-        base.AwakeCustomActions();
+        base.Awake();
         _button.onClick.AddListener(OnButtonClick);
+        BetManager.Instance.OnBetUpdated += OnBetUpdated;
+        BetManager.Instance.OnAllBetsCleared += OnAllBetsCleared;
         UpdateChipValueText();
     }
 
-    protected override void OnDestroyCustomActions()
+    protected override void OnDestroy()
     {
-        base.OnDestroyCustomActions();
+        base.OnDestroy();
 
         _button.onClick.RemoveListener(OnButtonClick);
+
+        if (BetManager.Instance == null)
+        {
+            return;
+        }
+
+        BetManager.Instance.OnBetUpdated -= OnBetUpdated;
+        BetManager.Instance.OnAllBetsCleared -= OnAllBetsCleared;
+    }
+
+    private void OnAllBetsCleared()
+    {
+        _placedChips.ForEach(chip => chip.Deactivate());
+        _placedChips.Clear();
+        UpdateChipValueText();
+    }
+
+    private void OnBetUpdated(RouletteBet rouletteBet)
+    {
+        if (rouletteBet.BetInfo.BetType == _betType)
+        {
+            if (Numbers.Count == 0)
+            {
+                UpdateChipImages(rouletteBet);
+                UpdateChipValueText();
+                return;
+            }
+
+            if (rouletteBet.BetInfo.Numbers.All(num => Numbers.Contains(num)))
+            {
+                UpdateChipImages(rouletteBet);
+                UpdateChipValueText();
+            }
+        }
     }
 
     private void OnButtonClick()
@@ -86,7 +122,22 @@ public class BetButtonWidget : ButtonWidgetBase
         _chipValueText.text = _placedChips.Count > 0 ? _placedChips.Sum(chip => chip.GetChipValue()).ToString() : "0";
     }
 
-    private void PlaceChipImage()
+    private void UpdateChipImages(RouletteBet rouletteBet)
+    {
+        int placedChipValue = _placedChips.Sum(chip => chip.GetChipValue());
+        int newTotalBetAmount = ChipManager.Instance.GetTotalBetAmount(rouletteBet.BetInfo);
+
+        if (newTotalBetAmount > placedChipValue)
+        {
+            PlaceChipImage(newTotalBetAmount - placedChipValue);
+        }
+        else
+        {
+            RemoveChipImage();
+        }
+    }
+
+    private void PlaceChipImage(int chipValue = 0)
     {
         GameObject chipWidgetGo = PoolManager.Instance.GetObjectFromPool<ChipWidget>();
 
@@ -101,7 +152,14 @@ public class BetButtonWidget : ButtonWidgetBase
         rectTransform.localRotation = Quaternion.identity;
         rectTransform.localScale = Vector3.one * 0.45f;
 
-        chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
+        if (chipValue == 0)
+        {
+            chipWidget.Initialize(ChipManager.Instance.GetSelectedChip().Value);
+        }
+        else
+        {
+            chipWidget.Initialize(chipValue);
+        }
     }
 
     private void RemoveChipImage()

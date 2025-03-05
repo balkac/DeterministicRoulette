@@ -31,7 +31,7 @@ public class ClearButtonWidget : IngameButton
     protected override void OnButtonClickCustomActions()
     {
         base.OnButtonClickCustomActions();
-        
-        
+
+        BetManager.Instance.ClearAllBets();
     }
 }
