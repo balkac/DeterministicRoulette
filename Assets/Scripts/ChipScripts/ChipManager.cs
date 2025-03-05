@@ -1,11 +1,50 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class ChipManager : Singleton<ChipManager>
 {
+    [SerializeField] private int _startingChipCount = 1000;
+
+    public int StartingChipCount => _startingChipCount;
+
+    [SerializeField] private RouletteManager _rouletteManager;
+
     private Chip _selectedChip;
     private Dictionary<BetData, List<Chip>> _betAmounts = new Dictionary<BetData, List<Chip>>();
+    public int TotalChipCounts { private set; get; }
+
+    public Action<int> OnTotalChipCountChanged;
+
+    protected override void AwakeCore()
+    {
+        base.AwakeCore();
+
+        TotalChipCounts = _startingChipCount;
+        _rouletteManager.OnSpinStarted += OnSpinStarted;
+        _rouletteManager.OnRouletteWon += OnRouletteWon;
+    }
+
+    private void OnRouletteWon(int payOutCount)
+    {
+        TotalChipCounts += payOutCount;
+        OnTotalChipCountChanged?.Invoke(TotalChipCounts);
+    }
+
+    private void OnSpinStarted()
+    {
+        TotalChipCounts -= BetManager.Instance.GetTotalBetAmount();
+        OnTotalChipCountChanged?.Invoke(TotalChipCounts);
+    }
+
+    protected override void OnDestroyCore()
+    {
+        base.OnDestroyCore();
+
+        _rouletteManager.OnSpinStarted -= OnSpinStarted;
+        _rouletteManager.OnRouletteWon -= OnRouletteWon;
+    }
 
     public void SetSelectedChip(Chip chip)
     {

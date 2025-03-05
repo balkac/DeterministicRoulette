@@ -21,6 +21,7 @@ public class RouletteManager : MonoBehaviour
     public Action<WheelNumberData, bool, int> OnSpinDataReceived;
     public Action<int> OnRouletteWon;
     private int _lastTotalPayout;
+
     private void Awake()
     {
         _americanClothUI.OnNumberSelected += OnNumberSelected;
@@ -53,10 +54,15 @@ public class RouletteManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpinRoulette();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     SpinRoulette();
+        // }
+    }
+
+    public int GetLastTotalPayout()
+    {
+        return _lastTotalPayout;
     }
 
     public void SpinRoulette()
