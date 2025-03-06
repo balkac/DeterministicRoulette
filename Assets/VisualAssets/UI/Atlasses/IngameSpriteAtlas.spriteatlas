@@ -91,7 +91,7 @@ SpriteAtlas:
   - chip50
   - CommonUI_WhiteTile
   - GoldIcon
-  - ChipValuePanel
+  - Chipvaluepanel
   - ClearButton
   - chip100
   - Button_Square04
